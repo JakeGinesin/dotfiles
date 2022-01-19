@@ -50,6 +50,8 @@ set showcmd
 " Show the mode you are on the last line.
 set showmode
 
+set showmatch
+
 " Use highlighting when doing a search.
 set hlsearch
 
@@ -60,6 +62,74 @@ set wildmenu
 
 set wildmode=list:longest
 
-set wildignore=*.docx,*.jpg,*.png,*gif,*.pdf,*.pyc
+set wildignore=*.docx,*.jpg,*.png,*gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.png
 
 let g:loaded_matchparen=1
+
+inoremap {<CR? {<CR>}<C-o>O
+
+map <C-o> :NERDTreeToggle<CR>
+
+" 'zo' to open folds, 'zc' to close folds, 'zR' to open all folds, 'zM to
+" close all folds'
+
+" PLUGINS -------------------------- {{{
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'dense-analysis/ale'
+
+Plug 'preservim/nerdtree'
+
+call plug#end()
+
+" }}}
+
+" MAPPINGS ------------------------- {{{
+
+" mapping jj to escape 
+" inoremap jj <Esc>
+
+" Map the F5 key to run a Python script inside Vim.
+" I map F5 to a chain of commands here.
+" :w saves the file.
+" <CR> (carriage return) is like pressing the enter key.
+" !clear runs the external clear screen command.
+" !python3 % executes the current file with Python.
+nnoremap <f5> :w <CR>:!clear <CR>:!python3 % <CR>
+
+" You can split the window in Vim by typing :split or :vsplit.
+"  Navigate the split view easier by pressing CTRL+j, CTRL+k, CTRL+h, or
+" CTRL+l.
+" nnoremap <c-k> <c-w>k 
+" nnoremap <c-i> <c-w>i 
+" nnoremap <c-j> <c-w>j 
+" nnoremap <c-l> <c-w>l  
+
+" NERDTree specific mappings.
+" Map the F3 key to toggle NERDTree open and close.
+ nnoremap <F3> :NERDTreeToggle<cr>
+
+"  Have nerdtree ignore certain files and directories.
+ let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
+
+" }}}
+
+" VIMSCRIPT ------------------------ {{{
+
+" this will enable code folding
+" use the marker method of folding
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+" more vimscript goes here:
+
+" }}}
+
+" STATUSLINE ------------------------ {{{
+"
+" status bar goes here!
+"
+" }}}

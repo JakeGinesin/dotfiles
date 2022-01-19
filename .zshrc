@@ -1,10 +1,15 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Init commands
+#clear
+#echo It is currently `date`.
+#echo Running `uname -s -r`.
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Themes
+# Theme
 ZSH_THEME="af-magic"
 
 # Plugins
@@ -23,11 +28,41 @@ source $ZSH/oh-my-zsh.sh
 
 alias python='python3'
 alias pls='sudo'
+alias zshrc='vim /home/synchronous/.zshrc' 
+alias vi='vim'
+alias pq="ping google.com -c 5"
+
+## Curl Aliases for easy info
+
+alias weather="curl https://wttr.in; echo"
+alias myip="curl https://ipecho.net/plain; echo"
+alias crypto="curl https://usd.rate.sx"
+
+## Arch aliases 
+alias search="pacman -Ss"
+alias update="sudo pacman -Syu"
+alias install="sudo pacman -S"
+
+## iwctl aliases
+alias sl="iwctl station list"
+alias sgn="iwctl station wlan0 scan; iwctl station wlan0 get-networks"
+alias sc="iwctl station wlan0 connect"
+
+## directory control
+alias ..="cd .."
+alias ...="cd ../.."
+alias .4="cd ../../.."
 
 # fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fdfind --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
+
+# Define ations for Home/End/Delete/Insert keys
+bindkey "\e[1~" beginning-of-line
+bindkey "\e[4~" end-of-line
+bindkey "\e[3~" delete-char
+bindkey "\e[2~" overwrite-mode
 
 # ------ DEFAULT NOTES:
 
