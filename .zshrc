@@ -32,6 +32,9 @@ alias zshrc='vim /home/synchronous/.zshrc'
 alias vi='vim'
 alias pq="ping google.com -c 5"
 
+# Ported from windows because I'm a scrub
+alias cls="clear"
+
 ## Curl Aliases for easy info
 
 alias weather="curl https://wttr.in; echo"
@@ -63,6 +66,19 @@ bindkey "\e[1~" beginning-of-line
 bindkey "\e[4~" end-of-line
 bindkey "\e[3~" delete-char
 bindkey "\e[2~" overwrite-mode
+
+# More Widgets
+
+run_ranger () {
+    echo
+    ranger --choosedir=$HOME/.rangedir < $TTY
+    LASTDIR='cat $HOME/.rangerdir'
+    cd "$LASTDIR"
+    zle reset-prompt
+}
+zle -N run_ranger
+
+bindkey '^o' run_ranger
 
 # ------ DEFAULT NOTES:
 
