@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/etc/X11/xorg.conf.d'
+let g:netrw_dirhist_8='/home/synchronous/.npm'
+let g:netrw_dirhist_7='/home/synchronous/.vim'
+let g:netrw_dirhist_6='/home/synchronous/.config'
+let g:netrw_dirhist_5='/etc/X11/xorg.conf.d'
+let g:netrw_dirhist_4='/home/synchronous/.vim'
+let g:netrw_dirhist_3='/etc/X11/xinit/xinitrc.d'
+let g:netrw_dirhist_2='/etc/X11/xorg.conf.d'
+let g:netrw_dirhist_1='/usr/share/X11/xorg.conf.d'
