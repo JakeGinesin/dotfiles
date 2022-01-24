@@ -56,16 +56,22 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias .4="cd ../../.."
 
+# replacing ls with exa
+alias ls="exa -al --color=always --git --group-directories-first"
+alias l.="exa -a --colour=always --git -u | egrep '^\.'"
+
 # fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fdfind --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
 
 # Define ations for Home/End/Delete/Insert keys
-bindkey "\e[1~" beginning-of-line
-bindkey "\e[4~" end-of-line
-bindkey "\e[3~" delete-char
-bindkey "\e[2~" overwrite-mode
+bindkey "\e[1~" beginning-of-line # Home
+bindkey "\e[4~" end-of-line # End
+bindkey "\e[3~" delete-char #Del
+bindkey "\e[2~" overwrite-mode # Ins
+bindkey "\e[6~" end-of-history # PageDown
+bindkey "\e[5~" beginning-of-history #PageUp
 
 # More Widgets
 
