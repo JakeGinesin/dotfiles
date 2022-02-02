@@ -6,13 +6,12 @@
 #echo It is currently `date`.
 #echo Running `uname -s -r`.
 
-# Path to your oh-my-zsh installation.
+# Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Theme
 ZSH_THEME="af-magic"
-
-# Plugins
+# ------------------- Plugins
 plugins=(
     fzf
     git
@@ -23,7 +22,7 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 
-# Aliases
+# ------------------- Aliases
 
 alias python='python3'
 alias pls='sudo'
@@ -56,15 +55,17 @@ alias ...="cd ../.."
 alias .4="cd ../../.."
 
 # replacing ls with exa
-alias ls="exa -al --color=always --git --group-directories-first"
+alias ls="exa -a --color=always --git --group-directories-first"
+alias l="exa -al --color=always --git --group-directories-first"
 alias l.="exa -a --colour=always --git -u | egrep '^\.'"
 
-# fzf configuration
+# ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fdfind --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
 
-# Define ations for Home/End/Delete/Insert keys
+
+# ------------------- Key Binding
 bindkey "\e[1~" beginning-of-line # Home
 bindkey "\e[4~" end-of-line # End
 bindkey "\e[3~" delete-char #Del
@@ -72,8 +73,7 @@ bindkey "\e[2~" overwrite-mode # Ins
 bindkey "\e[6~" end-of-history # PageDown
 bindkey "\e[5~" beginning-of-history #PageUp
 
-# More Widgets
-
+# ------------------- More Widgets
 run_ranger () {
     echo
     ranger --choosedir=$HOME/.rangedir < $TTY
@@ -84,7 +84,6 @@ run_ranger () {
 zle -N run_ranger
 
 bindkey '^o' run_ranger
-
 # ------ DEFAULT NOTES:
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
