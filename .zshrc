@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -10,7 +17,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Theme
-ZSH_THEME="af-magic"
+#ZSH_THEME="af-magic"
+ZSH_THEME="powerlevel10k/powerlevel10k" 
+
 # ------------------- Plugins
 plugins=(
     fzf
@@ -54,10 +63,14 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias .4="cd ../../.."
 
-# replacing ls with exa
-alias ls="exa -a --color=always --git --group-directories-first"
+# replacing ls with exa & lsd
+alias ls="lsd --group-dirs first"
 alias l="exa -al --color=always --git --group-directories-first"
 alias l.="exa -a --colour=always --git -u | egrep '^\.'"
+
+# Lolcats!!
+
+alias neofetch="neofetch | lolcat"
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -84,6 +97,16 @@ run_ranger () {
 zle -N run_ranger
 
 bindkey '^o' run_ranger
+
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+
 # ------ DEFAULT NOTES:
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -156,3 +179,6 @@ bindkey '^o' run_ranger
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
