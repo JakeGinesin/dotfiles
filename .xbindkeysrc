@@ -14,6 +14,11 @@
 "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
    XF86AudioMicMute
 
+"xbacklight -inc 5"
+   XF86MonBrightnessUp
+
+"xbacklight -dec 5"
+   XF86MonBrightnessDown
 
 # Notes that I don't want to delete ._. => 
 # To specify a key, you can use 'xbindkeys --key' or
