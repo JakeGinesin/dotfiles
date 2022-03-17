@@ -1,3 +1,5 @@
+![](https://i.imgur.com/YCKR7dY.png)
+
 # dotfiles
 
 My dotfiles from my main laptop running Arch Linux and bspwm. 
