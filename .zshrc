@@ -32,11 +32,13 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # ------------------- Aliases
+# misc
 alias python='python3'
 alias pls='sudo'
 alias zshrc='vim /home/synchronous/.zshrc' 
 alias vi='vim'
 alias pq="ping google.com -c 5"
+alias lock="sudo systemctl restart lightdm"
 
 # dotfile alias
 alias config='/usr/bin/git --git-dir=/home/synchronous/.cfg/ --work-tree=/home/synchronous'
