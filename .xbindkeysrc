@@ -14,10 +14,10 @@
 "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
    XF86AudioMicMute
 
-"xbacklight -inc 5"
+"brightnessctl set 20+"
    XF86MonBrightnessUp
 
-"xbacklight -dec 5"
+"brightnessctl set 20-"
    XF86MonBrightnessDown
 
 # Notes that I don't want to delete ._. => 

@@ -43,7 +43,11 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
+# t -> tiled
+# shift + t -> smol tile
+# s -> floating
+# a -> fullscreen
+super + {t,shift + t,s,a}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
@@ -127,5 +131,5 @@ alt + Tab
 	bspc node -f last
 
 # start firefox
-super + {b}
-        firefox &
+super + {f}
+        firefox 
