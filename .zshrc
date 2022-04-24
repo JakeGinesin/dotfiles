@@ -32,12 +32,14 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # ------------------- Aliases
-
 alias python='python3'
 alias pls='sudo'
 alias zshrc='vim /home/synchronous/.zshrc' 
 alias vi='vim'
 alias pq="ping google.com -c 5"
+
+# dotfile alias
+alias config='/usr/bin/git --git-dir=/home/synchronous/.cfg/ --work-tree=/home/synchronous'
 
 # Ported from windows because I'm a scrub
 alias cls="clear"
@@ -69,14 +71,12 @@ alias l="exa -al --color=always --git --group-directories-first"
 alias l.="exa -a --colour=always --git -u | egrep '^\.'"
 
 # Lolcats!!
-
 alias neofetch="neofetch | lolcat"
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fdfind --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
-
 
 # ------------------- Key Binding
 bindkey "\e[1~" beginning-of-line # Home
@@ -105,7 +105,6 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
-
 
 # ------ DEFAULT NOTES:
 
