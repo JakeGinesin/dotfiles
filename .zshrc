@@ -39,6 +39,7 @@ alias zshrc='vim /home/synchronous/.zshrc'
 alias vi='vim'
 alias pq="ping google.com -c 5"
 alias lock="sudo systemctl restart lightdm"
+alias compp="g++" 
 
 # dotfile alias
 alias config='/usr/bin/git --git-dir=/home/synchronous/.cfg/ --work-tree=/home/synchronous'
@@ -107,6 +108,8 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+alias compp="g++ \\!* ~/Programming/cpp/a.out"
 
 # ------ DEFAULT NOTES:
 

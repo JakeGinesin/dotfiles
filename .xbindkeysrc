@@ -20,6 +20,9 @@
 "brightnessctl set 20-"
    XF86MonBrightnessDown
 
+"xlock -mode random -duration 9999999999999 -modelist 'rain roll ico lissie julia euler2d daisy bubble bug bouboule ant penrose pyro pyro2 qix scooter spiral star'"
+   Control+Alt + Delete
+
 # Notes that I don't want to delete ._. => 
 # To specify a key, you can use 'xbindkeys --key' or
 # 'xbindkeys --multikey' and put one of the two lines in this file.

@@ -48,6 +48,7 @@ call plug#end()
 
 nnoremap <f5> :w <CR>:!clear <CR>:!python3 % <CR>
 
+map <C-t> :term<CR>
 map <C-o> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
 
