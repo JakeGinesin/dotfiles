@@ -1,5 +1,5 @@
 ![](https://i.imgur.com/YCKR7dY.png)
-![](https://i.imgur.com/0ydPUqa.png)
+![](https://i.imgur.com/JcexNey.png)
 
 # dotfiles
 
