@@ -114,15 +114,15 @@ super + ctrl + space
 #
 
 # expand a window by moving one of its side outward
-super + alt + {Left,Down,Up,Right}
+alt + {Left,Down,Up,Right}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
-super + alt + shift + {Left,Down,Up,Right}
+alt + shift + {Left,Down,Up,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
-super + {Left,Down,Up,Right}
+alt + {w,s,a,d}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # Jake's custom commands:
@@ -133,4 +133,7 @@ alt + Tab
 
 # start firefox
 super + {f}
-        firefox 
+    firefox 
+
+super + {Left,Right}
+    bspc desktop -f {prev,next}
