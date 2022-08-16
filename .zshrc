@@ -35,14 +35,20 @@ source $ZSH/oh-my-zsh.sh
 # misc
 alias python='python3'
 alias pls='sudo'
-alias zshrc='vim /home/synchronous/.zshrc' 
-alias vi='vim'
+alias zshrc='nvim /home/synchronous/.zshrc' 
+alias vi='nvim'
+alias vim='nvim'
 alias pq="ping google.com -c 5"
 alias lock="sudo systemctl restart lightdm"
 alias compp="g++" 
 
 # dotfile alias
 alias config='/usr/bin/git --git-dir=/home/synchronous/.cfg/ --work-tree=/home/synchronous'
+
+# local stuff (you'll prob want to remove these if you're copying my dots)
+alias site="cd /home/synchronous/Programming/jake_site_static"
+alias website="cd /home/synchronous/Programming/jake_site_static"
+alias jakesite="cd /home/synchronous/Programming/jake_site_static"
 
 # Ported from windows because I'm a scrub
 alias cls="clear"
@@ -167,7 +173,7 @@ alias compp="g++ \\!* ~/Programming/cpp/a.out"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#   export EDITOR='nvim'
 # else
 #   export EDITOR='mvim'
 # fi
