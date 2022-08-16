@@ -3,7 +3,7 @@ items:
       name: 3024 (dark)
       author: Chris Kempson
       primary:
-        background: "#090300"
+        background: "#0d0d0d"
         foreground: "#a5a2a2"
       cursor:
         text: "#090300"
@@ -30,7 +30,7 @@ colors:
   name: 3024 (dark)
   author: Chris Kempson
   primary:
-    background: "#090300"
+    background: "#0d0d0d"
     foreground: "#a5a2a2"
   cursor:
     text: "#090300"
@@ -54,5 +54,5 @@ colors:
     cyan: "#b5e4f4"
     white: "#f7f7f7"
 font:
-  size: 8.0
+  size: 7.0
 theme: 3024.dark
