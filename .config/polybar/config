@@ -3,7 +3,7 @@
 ; (_.(_)|(_)[  _) 
 ; 
 [colors]
-background = #110c09
+background = #0d0d0d
 foreground = #ffffff
 theme = #c89263
 

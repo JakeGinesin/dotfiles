@@ -55,4 +55,7 @@ colors:
     white: "#f7f7f7"
 font:
   size: 7.0
+  normal:
+    family: monospace
+    style: Regular
 theme: 3024.dark

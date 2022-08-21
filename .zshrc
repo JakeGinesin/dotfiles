@@ -41,6 +41,7 @@ alias vim='nvim'
 alias pq="ping google.com -c 5"
 alias lock="sudo systemctl restart lightdm"
 alias compp="g++" 
+alias neovim='nvim'
 
 # dotfile alias
 alias config='/usr/bin/git --git-dir=/home/synchronous/.cfg/ --work-tree=/home/synchronous'
@@ -54,7 +55,6 @@ alias jakesite="cd /home/synchronous/Programming/jake_site_static"
 alias cls="clear"
 
 ## Curl Aliases for easy info
-
 alias weather="curl https://wttr.in; echo"
 alias myip="curl https://ipecho.net/plain; echo"
 alias crypto="curl https://usd.rate.sx"
