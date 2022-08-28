@@ -1,4 +1,4 @@
-![](https://i.imgur.com/1zM8u0e.png)
+![](https://i.imgur.com/FDKAYTo.png)
 ![](https://i.imgur.com/1zM8u0e.png)
 
 # dotfiles
