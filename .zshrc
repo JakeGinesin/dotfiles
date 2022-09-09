@@ -42,6 +42,7 @@ alias pq="ping google.com -c 5"
 alias lock="sudo systemctl restart lightdm"
 alias compp="g++" 
 alias neovim='nvim'
+alias wscan='systemctl restart iwd | iwctl station wlan0 scan | iwctl station wlan0 get-networks'
 
 # dotfile alias
 alias config='/usr/bin/git --git-dir=/home/synchronous/.cfg/ --work-tree=/home/synchronous'
@@ -50,8 +51,10 @@ alias config='/usr/bin/git --git-dir=/home/synchronous/.cfg/ --work-tree=/home/s
 alias site="cd /home/synchronous/Programming/jake_site_static"
 alias website="cd /home/synchronous/Programming/jake_site_static"
 alias jakesite="cd /home/synchronous/Programming/jake_site_static"
+alias wiki='cd /home/synchronous/Programming/jake-wiki | npm start --prefix /home/synchronous/Programming/jake-wiki'
+alias pwiki='cd /home/synchronous/Programming/jake-wiki | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki commit -am "pog" | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki push'
 
-# Ported from windows because I'm a scrub
+# Ported from windows because I'm a nerd lmfao
 alias cls="clear"
 
 ## Curl Aliases for easy info

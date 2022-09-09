@@ -29,6 +29,7 @@ set wildmode=longest,list
 set cc=80
 set colorcolumn=0
 set t_Co=256
+let s:fontsize = 14
 " Italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
@@ -42,7 +43,7 @@ let g:netrw_winsize=25
 let g:netrw_keepdir=0
 let g:netrw_localcopydircmd='cp -r'
 
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 " https://stackoverflow.com/questions/34675677/disable-highlight-matched-parentheses-in-vim-let-loaded-matchparen-1-not-w
 let loaded_matchparen = 1
