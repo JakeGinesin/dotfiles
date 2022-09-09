@@ -11,6 +11,6 @@ The only change I made to the above technique was the addition of this readme. I
 
 So if you clone this, all you need to do to remove the readme is:
 ```
-~ » config update-index --assume-unchanged README.md
 ~ » rm README.md
+~ » config update-index --assume-unchanged README.md
 ```
