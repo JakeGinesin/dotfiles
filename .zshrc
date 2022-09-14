@@ -41,8 +41,11 @@ alias vim='nvim'
 alias pq="ping google.com -c 5"
 alias lock="sudo systemctl restart lightdm"
 alias compp="g++" 
+alias n="nvim"
 alias neovim='nvim'
-alias wscan='systemctl restart iwd | iwctl station wlan0 scan | iwctl station wlan0 get-networks'
+alias wscan='systemctl restart iwd | iwctl station wlan0 scan | iwctl station wlan0 get-networks | rfkill unblock all'
+alias nrc='nvim ~/.config/nvim/init.vim'
+alias nvimrc='nvim ~/.config/nvim/init.vim'
 
 # dotfile alias
 alias config='/usr/bin/git --git-dir=/home/synchronous/.cfg/ --work-tree=/home/synchronous'
@@ -52,7 +55,7 @@ alias site="cd /home/synchronous/Programming/jake_site_static"
 alias website="cd /home/synchronous/Programming/jake_site_static"
 alias jakesite="cd /home/synchronous/Programming/jake_site_static"
 alias wiki='cd /home/synchronous/Programming/jake-wiki | npm start --prefix /home/synchronous/Programming/jake-wiki'
-alias pwiki='cd /home/synchronous/Programming/jake-wiki | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki commit -am "pog" | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki push'
+alias pwiki='cd /home/synchronous/Programming/jake-wiki | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki add . | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki commit -am "pog" | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki push'
 
 # Ported from windows because I'm a nerd lmfao
 alias cls="clear"
@@ -97,6 +100,10 @@ bindkey "\e[3~" delete-char #Del
 bindkey "\e[2~" overwrite-mode # Ins
 bindkey "\e[6~" end-of-history # PageDown
 bindkey "\e[5~" beginning-of-history #PageUp
+
+# -------------------- Deleting previous word entirely
+bindkey '^H' backward-kill-word
+bindkey '5~' kill-word
 
 # ------------------- More Widgets
 run_ranger () {
