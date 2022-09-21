@@ -25,3 +25,18 @@ let g:vimtex_compiler_method = 'latexrun'
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
 let maplocalleader = ","
+
+let g:Tex_IgnoredWarnings = 
+    \'Package hyperref Warning'."\n".
+    \'Token not allowed in a PDF string (Unicode)'."\n".
+    \'removing math shift'."\n".
+    \'removing superscript'."\n".
+    \'Underfull'."\n".
+    \'Overfull'."\n".
+    \'specifier changed to'."\n".
+    \'You have requested'."\n".
+    \'Missing number, treated as zero.'."\n".
+    \'There were undefined references'."\n".
+    \'Citation %.%# undefined'."\n".
+    \'Double space found.'."\n"
+let g:Tex_IgnoreLevel = 8

@@ -27,6 +27,10 @@ call plug#begin("~/.vim/plugged")
  " latex shit
  Plug 'lervag/vimtex'
  " end latex shit
+ 
+ " CS3500 shit
+ Plug 'puremourning/vimspector'
+ " end CS3500 shit
 call plug#end()
 
 
@@ -185,6 +189,19 @@ tnoremap <Esc> <C-\><C-n>
 " terminal mode exit and close
 " tnoremap <A-c> <C-\><C-n>:bd!<CR>
 
+let g:copilot_filetypes={
+      \ '*': v:false,
+      \ 'python': v:true,
+      \ 'rust': v:true,
+      \ 'cpp': v:true,
+      \ 'c': v:true,
+      \ 'java': v:true,
+      \ 'javascript': v:true,
+      \ 'typescript': v:true,
+      \ 'go': v:true
+      \ }
+
  " sourcing other rcs
 source ~/.config/nvim/vimtex-rc.vim
 source ~/.config/nvim/bufferline-rc.vim
+source ~/.config/nvim/vimspector-rc.vim
