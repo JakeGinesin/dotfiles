@@ -16,6 +16,9 @@ fi
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# classpath export
+export CLASSPATH=$HOME/.classpath/*
+
 # Theme
 #ZSH_THEME="af-magic"
 ZSH_THEME="powerlevel10k/powerlevel10k" 
@@ -46,6 +49,12 @@ alias neovim='nvim'
 alias wscan='systemctl restart iwd | iwctl station wlan0 scan | iwctl station wlan0 get-networks | rfkill unblock all'
 alias nrc='nvim ~/.config/nvim/init.vim'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
+
+# intellij (shit IDE i'm forced to use for CS3500 until I can fully configure my nvim setup)
+alias intellij="snap run intellij-idea-community"
+alias intellij-idea-community="snap run intellij-idea-community"
+alias intellishit="snap run intellij-idea-community"
+
 
 # dotfile alias
 alias config='/usr/bin/git --git-dir=/home/synchronous/.cfg/ --work-tree=/home/synchronous'
