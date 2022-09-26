@@ -1,0 +1,9 @@
+[Unit]
+Description=archivebox service
+
+[Service]
+type=simple
+ExecStart=/bin/bash /home/jakeg/archivebox/run.sh
+
+[Install]
+WantedBy=multi-user.target
