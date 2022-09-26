@@ -6,7 +6,7 @@
 
 ## run_junit.sh
 
-`run_junit.sh` compiles a java project, then tests it using JUnit. It expects a certain filestructure, as specified as the following:
+`run_junit.sh` compiles a java project, then tests it using JUnit. It also outputs a cumulative `.jar` and a file, `sources.txt`, which contains all java files compiled. It expects a certain filestructure, as specified as the following:
 
 ```
 .
