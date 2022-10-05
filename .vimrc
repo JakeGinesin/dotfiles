@@ -198,7 +198,8 @@ let g:copilot_filetypes={
       \ 'java': v:true,
       \ 'javascript': v:true,
       \ 'typescript': v:true,
-      \ 'go': v:true
+      \ 'go': v:true,
+      \ 'pml': v:true
       \ }
 
  " sourcing other rcs

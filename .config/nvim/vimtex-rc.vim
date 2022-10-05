@@ -40,3 +40,5 @@ let g:Tex_IgnoredWarnings =
     \'Citation %.%# undefined'."\n".
     \'Double space found.'."\n"
 let g:Tex_IgnoreLevel = 8
+
+let g:vimtex_quickfix_enabled = 0

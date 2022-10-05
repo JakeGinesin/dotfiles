@@ -15,9 +15,7 @@ fi
 
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-# classpath export
-export CLASSPATH=$HOME/.classpath/*
+export CLASSPATH=/home/synchronous/.classpath/junit-4.13.2.jar:/home/synchronous/.classpath/hamcrest-core-1.3.jar:
 
 # Theme
 #ZSH_THEME="af-magic"
@@ -35,44 +33,58 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # ------------------- Aliases
-# misc
+
+# make sure i get the right version of python
 alias python='python3'
-alias pls='sudo'
-alias zshrc='nvim /home/synchronous/.zshrc' 
-alias vi='nvim'
-alias vim='nvim'
-alias pq="ping google.com -c 5"
+
+# ez lock
 alias lock="sudo systemctl restart lightdm"
-alias compp="g++" 
-alias n="nvim"
-alias neovim='nvim'
+
+# restart wifi
 alias wscan='systemctl restart iwd | iwctl station wlan0 scan | iwctl station wlan0 get-networks | rfkill unblock all'
+
+# easy access to config files I access frequently
+alias zshrc='nvim /home/synchronous/.zshrc' 
 alias nrc='nvim ~/.config/nvim/init.vim'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
 
-# intellij (shit IDE i'm forced to use for CS3500 until I can fully configure my nvim setup)
+# pls 
+alias pls='sudo'
+
+# neovim
+alias vi='nvim'
+alias vim='nvim'
+alias n="nvim"
+alias neovim='nvim'
+
+# alias so i can copy stuff to my clipboard from my terminal
+# example:
+#$ pwd | clip
+alias clip='perl -p -e "chomp if eof" | xclip -in -sel clip'
+
+# intellij (bad IDE i'm forced to use for CS3500 until I can fully configure my nvim setup)
 alias intellij="snap run intellij-idea-community"
 alias intellij-idea-community="snap run intellij-idea-community"
 alias intellishit="snap run intellij-idea-community"
 
-
 # dotfile alias
 alias config='/usr/bin/git --git-dir=/home/synchronous/.cfg/ --work-tree=/home/synchronous'
 
-# local stuff (you'll prob want to remove these if you're copying my dots)
+# stuff to for local webdev; 
 alias site="cd /home/synchronous/Programming/jake_site_static"
 alias website="cd /home/synchronous/Programming/jake_site_static"
 alias jakesite="cd /home/synchronous/Programming/jake_site_static"
 alias wiki='cd /home/synchronous/Programming/jake-wiki | npm start --prefix /home/synchronous/Programming/jake-wiki'
 alias pwiki='cd /home/synchronous/Programming/jake-wiki | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki add . | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki commit -am "pog" | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki push'
 
-# Ported from windows because I'm a nerd lmfao
+# Ported from windows LLL bozo 
 alias cls="clear"
 
 ## Curl Aliases for easy info
 alias weather="curl https://wttr.in; echo"
 alias myip="curl https://ipecho.net/plain; echo"
 alias crypto="curl https://usd.rate.sx"
+alias pq="ping google.com -c 5"
 
 ## Arch aliases 
 alias search="pacman -Ss"
@@ -134,7 +146,7 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
-alias compp="g++ \\!* ~/Programming/cpp/a.out"
+# alias compp="g++ \\!* ~/Programming/cpp/a.out"
 
 # ------ DEFAULT NOTES:
 
