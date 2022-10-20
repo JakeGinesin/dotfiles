@@ -113,6 +113,14 @@ inoremap {<CR? {<CR>}<C-o>O}
 set splitright
 set splitbelow
 
+" auto file wrap for certain types of files
+
+augroup Wrapline
+    autocmd!
+    autocmd FileType tex setlocal wrap
+augroup END
+
+
 " save file w/ ctrl+s
 command -nargs=0 -bar Update if &modified 
                            \|    if empty(bufname('%'))
@@ -175,7 +183,7 @@ colorscheme tokyonight
 
 map <C-t> :term<CR>
 map <C-o> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
+let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$', '\.class$']
 
 " move between panes to left/bottom/top/right
  nnoremap <C-j> <C-w>h 

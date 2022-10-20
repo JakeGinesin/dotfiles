@@ -15,6 +15,8 @@ fi
 
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# classpath for using junit
 export CLASSPATH=/home/synchronous/.classpath/junit-4.13.2.jar:/home/synchronous/.classpath/hamcrest-core-1.3.jar:
 
 # Theme
@@ -61,6 +63,7 @@ alias neovim='nvim'
 # example:
 #$ pwd | clip
 alias clip='perl -p -e "chomp if eof" | xclip -in -sel clip'
+alias pwdc='pwd | clip | echo "directory clipped"'
 
 # intellij (bad IDE i'm forced to use for CS3500 until I can fully configure my nvim setup)
 alias intellij="snap run intellij-idea-community"
