@@ -195,7 +195,6 @@ let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', 
 tnoremap <Esc> <C-\><C-n>
 
 " terminal mode exit and close
-" tnoremap <A-c> <C-\><C-n>:bd!<CR>
 
 let g:copilot_filetypes={
       \ '*': v:false,
