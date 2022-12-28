@@ -11,6 +11,10 @@ syntax enable
 " viewer method:
 let g:vimtex_view_method = 'zathura'
 
+" added tex flavor and quickfix mode
+let g:tex_flavor='latex'
+let g:vimtex_quickfix_mode=0
+
 " Or with a generic interface:
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'

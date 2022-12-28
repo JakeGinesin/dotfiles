@@ -13,6 +13,14 @@ fi
 #echo It is currently `date`.
 #echo Running `uname -s -r`.
 
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt nomatch
+unsetopt autocd beep extendedglob notify
+bindkey -v
+zstyle :compinstall filename '/home/synchronous/.zshrc'
+
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -53,11 +61,15 @@ alias nvimrc='nvim ~/.config/nvim/init.vim'
 # pls 
 alias pls='sudo'
 
+# fuck
+alias fuck="sudo !!"
+
 # neovim
 alias vi='nvim'
 alias vim='nvim'
 alias n="nvim"
 alias neovim='nvim'
+alias v='nvim'
 
 # alias so i can copy stuff to my clipboard from my terminal
 # example:
@@ -84,7 +96,7 @@ alias pwiki='cd /home/synchronous/Programming/jake-wiki | git --git-dir /home/sy
 alias cls="clear"
 
 ## Curl Aliases for easy info
-alias weather="curl https://wttr.in; echo"
+alias weather="curl https://wttr.in/Boston; echo"
 alias myip="curl https://ipecho.net/plain; echo"
 alias crypto="curl https://usd.rate.sx"
 alias pq="ping google.com -c 5"
@@ -105,12 +117,28 @@ alias ...="cd ../.."
 alias .4="cd ../../.."
 
 # replacing ls with exa & lsd
+# hrr drr why do you use lsd AND exa?
+# because lsd has icons but exa is better with everything else. smh. 
 alias ls="lsd --group-dirs first"
 alias l="exa -al --color=always --git --group-directories-first"
 alias l.="exa -a --colour=always --git -u | egrep '^\.'"
+alias l1="exa -a1h --sort=type" 
+alias lll="exa -a --sort=type"
+# for whatever reason running exa -T | clip crashes whatever i paste the result into lmao
+# alias tree="exa -T"
 
 # Lolcats!!
 alias neofetch="neofetch | lolcat"
+
+# screenshot
+alias screenshot="flameshot"
+
+# tars
+alias untar="tar -zxvf"
+alias mktar="tar -cvzf"
+
+# by default, put zathura windows in new process
+alias zathura="zathura --fork"
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -125,7 +153,7 @@ bindkey "\e[2~" overwrite-mode # Ins
 bindkey "\e[6~" end-of-history # PageDown
 bindkey "\e[5~" beginning-of-history #PageUp
 
-# -------------------- Deleting previous word entirely
+# -------------------- control backspace deleting previous word entirely
 bindkey '^H' backward-kill-word
 bindkey '5~' kill-word
 

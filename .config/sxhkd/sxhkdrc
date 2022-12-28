@@ -125,8 +125,6 @@ alt + shift + {Left,Down,Up,Right}
 alt + {w,s,a,d}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# Jake's custom commands:
-
 # Alt tab window shifter
 alt + Tab
 	bspc node -f last
@@ -135,8 +133,18 @@ alt + Tab
 super + {f}
     firefox 
 
+super + {shift} + {f}
+    firefox --private-window
+
 super + {Left,Right}
     bspc desktop -f {prev,next}
 
 super + {o}
     obsidian
+
+# screenshot stuff
+Print
+    flameshot full -c
+
+super + shift + s 
+    flameshot gui

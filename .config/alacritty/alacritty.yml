@@ -54,7 +54,7 @@ colors:
     cyan: "#b5e4f4"
     white: "#f7f7f7"
 font:
-  size: 7.0
+  size: 6.0
   normal:
     family: monospace
     style: Regular

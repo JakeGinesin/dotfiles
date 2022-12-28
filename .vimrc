@@ -8,12 +8,18 @@ call plug#begin("~/.vim/plugged")
  Plug 'SirVer/ultisnips'
  Plug 'honza/vim-snippets'
  Plug 'scrooloose/nerdtree'
+ " Plug 'nvim-tree/nvim-tree.lua'
  Plug 'preservim/nerdcommenter'
- Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
  Plug 'romgrk/barbar.nvim'
  Plug 'github/copilot.vim'
+ Plug 'junegunn/goyo.vim'
+ Plug 'nvim-telescope/telescope.nvim'
+ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+ Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+ Plug 'nvim-tree/nvim-tree.lua'
  " lean shit
  Plug 'Julian/lean.nvim'
  Plug 'neovim/nvim-lspconfig'
@@ -22,7 +28,7 @@ call plug#begin("~/.vim/plugged")
  Plug 'hrsh7th/vim-vsnip'       " For snippets
  Plug 'andrewradev/switch.vim'  " For Lean switch support
  Plug 'tomtom/tcomment_vim'     " For commenting motions
- " end lean shit
+" end lean shit
   
  " latex shit
  Plug 'lervag/vimtex'
@@ -32,7 +38,6 @@ call plug#begin("~/.vim/plugged")
  Plug 'puremourning/vimspector'
  " end CS3500 shit
 call plug#end()
-
 
 set nocompatible
 filetype on
@@ -120,7 +125,6 @@ augroup Wrapline
     autocmd FileType tex setlocal wrap
 augroup END
 
-
 " save file w/ ctrl+s
 command -nargs=0 -bar Update if &modified 
                            \|    if empty(bufname('%'))
@@ -137,9 +141,6 @@ set nu
 
 " cursor blinkage
 " set guicursor=v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait1700-blinkoff400-blinkon950-Cursor/lCursor,sm:block,n:block-blinkon0
-
-" set relativenumber
-set nu
 
 set smarttab
 set cindent
@@ -168,6 +169,19 @@ set encoding=utf-8
 imap <C-BS> <C-W>
 imap <C-H> <C-W>
 
+" Set coc complete to be shift tab 
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
+" set copilot complete to control shift tab
+" inoremap <expr> <S-Tab> copilot#Accept("\<CR>") 
+" let g:copilot_no_tab_map = v:true
+
+" imap <silent><script><expr> <C-[> copilot#Accept("\<CR>")
+
+if &filetype ==# 'md' || &filetype ==# 'tex'
+  setlocal wrap
+endif
+
 " color theming
 let g:tokyonight_style = "night"
 let g:tokyonight_italic_functions = 1
@@ -181,8 +195,10 @@ let g:tokyonight_colors = {
 
 colorscheme tokyonight
 
-map <C-t> :term<CR>
-map <C-o> :NERDTreeToggle<CR>
+" nerdtree stuff
+" map <C-o> :NERDTreeToggle<CR>
+" Tree
+nnoremap <C-o> :NvimTreeToggle<CR>
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$', '\.class$']
 
 " move between panes to left/bottom/top/right
@@ -191,10 +207,17 @@ let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', 
  nnoremap <C-i> <C-w>k  
  nnoremap <C-l> <C-w>l 
 
+" term toggle 
+map <C-t> :term<CR>
+
 " exit terminal mode mapping
 tnoremap <Esc> <C-\><C-n>
 
-" terminal mode exit and close
+" nnoremap <silent> <C-q> <C-w>s<C-w>j:resize 20<CR>:terminal<CR><S-i>
+
+" Focus commands
+nnoremap <C-a>z :Goyo 80<CR>
+nnoremap <C-a>q :Goyo!<CR>
 
 let g:copilot_filetypes={
       \ '*': v:false,
@@ -209,7 +232,104 @@ let g:copilot_filetypes={
       \ 'pml': v:true
       \ }
 
- " sourcing other rcs
+" Telescope
+nnoremap <C-h>f :Telescope find_files<CR>
+nnoremap <C-h>d :Telescope live_grep<CR>
+nnoremap <C-h>u :Telescope lsp_definitions<CR>
+nnoremap <C-h>e :Telescope<CR>git_
+nnoremap <C-h>h :Telescope<CR>
+
+fun! Start()
+    " Don't run if: we have commandline arguments, we don't have an empty
+    " buffer, if we've not invoked as vim or gvim, or if we'e start in insert mode
+    if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=vim\=x\=\%[\.exe]$' || &insertmode
+        return
+    endif
+
+    " Start a new buffer ...
+    enew
+
+    " ... and set some options for it
+    setlocal
+        \ bufhidden=wipe
+        \ buftype=nofile
+        \ nobuflisted
+        \ nocursorcolumn
+        \ nocursorline
+        \ nolist
+        \ nonumber
+        \ noswapfile
+        \ norelativenumber
+
+    " Now we can just write to the buffer, whatever you want.
+    " call append('$', "")
+    for line in split(system('cat /home/synchronous/.config/nvim/startscreen.vimstart'), '\n')
+        call append('$', '' . l:line)
+    endfor
+
+    " No modifications to this buffer
+    setlocal nomodifiable nomodified
+
+    " When we go to insert mode start a new buffer, and start insert
+    nnoremap <buffer><silent> e :enew<CR>
+    nnoremap <buffer><silent> i :enew <bar> startinsert<CR>
+    nnoremap <buffer><silent> o :enew <bar> startinsert<CR>
+
+    set syntax=off
+    " nmap <ScrollWheelUp> <nop>
+    " nmap <S-ScrollWheelUp> <nop>
+    " nmap <C-ScrollWheelUp> <nop>
+    " nmap <ScrollWheelDown> <nop>
+    " nmap <S-ScrollWheelDown> <nop>
+    " nmap <C-ScrollWheelDown> <nop>
+    " nmap <ScrollWheelLeft> <nop>
+    " nmap <S-ScrollWheelLeft> <nop>
+    " nmap <C-ScrollWheelLeft> <nop>
+    " nmap <ScrollWheelRight> <nop>
+    " nmap <S-ScrollWheelRight> <nop>
+    " nmap <C-ScrollWheelRight> <nop>
+    
+    nmap <C-a> :enew <bar> startinsert <bar> :Goyo 80<CR>
+endfun
+
+" Run after doing all the startup stuff
+autocmd VimEnter * call Start()
+
+lua << EOF
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+vim.opt.termguicolors = true
+
+require('nvim-tree').setup()
+
+require('nvim-tree').setup({
+  sort_by = 'case_sensitive',
+  view = {
+    adaptive_size = false,
+    mappings = {
+      list = {
+        { key = 'u', action = 'dir_up' },
+      },
+    },
+    width = 30,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+    exclude = {".git", ".jpg", ".mp4", ".ogg", ".iso", ".pdf", ".odt", ".png", ".gif", ".db", ".class"},
+  },
+  actions = {
+    open_file = {
+        resize_window = false
+    }
+  },
+})
+EOF
+
+" " sourcing other rcs
 source ~/.config/nvim/vimtex-rc.vim
 source ~/.config/nvim/bufferline-rc.vim
 source ~/.config/nvim/vimspector-rc.vim
