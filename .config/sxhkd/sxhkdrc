@@ -139,8 +139,15 @@ super + {shift} + {f}
 super + {Left,Right}
     bspc desktop -f {prev,next}
 
+# super + {o}
+#    obsidian
+
+# open my notes file in nvim w/ a new alacritty window, then jump to end of file
 super + {o}
-    obsidian
+  alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | Goyo"
+
+super + {shift} + {o}
+  alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | NvimTreeOpen /home/synchronous/Documents/Obsidian/Journal"
 
 # screenshot stuff
 Print

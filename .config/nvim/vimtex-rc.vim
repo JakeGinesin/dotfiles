@@ -46,3 +46,7 @@ let g:Tex_IgnoredWarnings =
 let g:Tex_IgnoreLevel = 8
 
 let g:vimtex_quickfix_enabled = 0
+
+" delete all extra compilation files
+autocmd BufWinLeave *.tex !latexmk -c > /dev/null %:p
+
