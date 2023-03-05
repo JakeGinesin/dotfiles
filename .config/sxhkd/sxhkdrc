@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-    rofi -show run
+    rofi -show drun
 	#dmenu_run -b
 
 # make sxhkd reload its configuration files:
@@ -89,6 +89,8 @@ super + {grave,Tab}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+super + alt + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
+  bspc {desktop -f, node -d} '{11,12,13,14,15,16,17,18,19,20}'
 #
 # preselect
 #
@@ -121,6 +123,9 @@ alt + {Left,Down,Up,Right}
 alt + shift + {Left,Down,Up,Right}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
+alt + shift + w 
+  rfkill unblock all | iwctl station wlan0 scan | iwctl station wlan0 get-networks 
+
 # move a floating window
 alt + {w,s,a,d}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
@@ -131,10 +136,10 @@ alt + Tab
 
 # start firefox
 super + {f}
-    firefox 
+    librewolf 
 
 super + {shift} + {f}
-    firefox --private-window
+    librewolf --private-window
 
 super + {Left,Right}
     bspc desktop -f {prev,next}
@@ -146,8 +151,13 @@ super + {Left,Right}
 super + {o}
   alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | Goyo"
 
+# open my notes without goyo and with nvimteee
 super + {shift} + {o}
   alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | NvimTreeOpen /home/synchronous/Documents/Obsidian/Journal"
+
+# search my notes using rofi and open the right one
+super + {ctrl} + {o}
+  find /home/synchronous/Documents/Obsidian/Journal -follow | cut -c46- | grep -E '.md$' | grep -v "template" |  rofi -dmenu | read cdir && alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/$cdir -c "Goyo"
 
 # screenshot stuff
 Print

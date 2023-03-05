@@ -51,7 +51,7 @@ alias python='python3'
 alias lock="sudo systemctl restart lightdm"
 
 # restart wifi
-alias wscan='systemctl restart iwd | iwctl station wlan0 scan | iwctl station wlan0 get-networks | rfkill unblock all'
+alias wscan='systemctl restart iwd | iwctl station wlan0 scan | iwctl station wlan0 get-networks | rfkill unblock all && iwctl station wlan0 scan'
 
 # easy access to config files I access frequently
 alias zshrc='nvim /home/synchronous/.zshrc' 
@@ -150,6 +150,12 @@ alias mktar="tar -cvzf"
 
 # by default, put zathura windows in new process
 alias zathura="zathura --fork"
+
+alias os='vim /home/synchronous/current-semester/computer-systems/notes/os.md'
+alias asm='echo "c->asm: gcc -S [file] \nc->executable: gcc [file] -no-pie -o [filename]"'
+alias urls='sh /home/synchronous/.scripts/info.sh'
+alias favorites='vim /home/synchronous/Programming/jake_dark_site/build/resources.md'
+alias outlook='firefoxpwa site launch 01GQJNBVPHJHYHPYNG8FGS5TX4'
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

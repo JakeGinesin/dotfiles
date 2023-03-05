@@ -3,6 +3,9 @@
 
 " plugins
 call plug#begin("~/.vim/plugged")
+
+
+ " 
  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
  Plug 'ryanoasis/vim-devicons'
  Plug 'SirVer/ultisnips'
@@ -15,18 +18,23 @@ call plug#begin("~/.vim/plugged")
  Plug 'romgrk/barbar.nvim'
  Plug 'github/copilot.vim'
  Plug 'junegunn/goyo.vim'
+ Plug 'nvim-lua/plenary.nvim'
  Plug 'nvim-telescope/telescope.nvim'
  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
  Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
  Plug 'nvim-tree/nvim-tree.lua'
+ Plug 'ggandor/leap.nvim'
+
+  
+
  " lean shit
- Plug 'Julian/lean.nvim'
- Plug 'neovim/nvim-lspconfig'
- Plug 'nvim-lua/plenary.nvim'
- Plug 'hrsh7th/nvim-cmp'        " For LSP completion
- Plug 'hrsh7th/vim-vsnip'       " For snippets
- Plug 'andrewradev/switch.vim'  " For Lean switch support
- Plug 'tomtom/tcomment_vim'     " For commenting motions
+ " Plug 'Julian/lean.nvim'
+ " Plug 'neovim/nvim-lspconfig'
+ " Plug 'nvim-lua/plenary.nvim'
+ " Plug 'hrsh7th/nvim-cmp'        " For LSP completion
+ " Plug 'hrsh7th/vim-vsnip'       " For snippets
+ " Plug 'andrewradev/switch.vim'  " For Lean switch support
+ " Plug 'tomtom/tcomment_vim'     " For commenting motions
 " end lean shit
   
  " latex shit
@@ -271,18 +279,18 @@ fun! Start()
     nnoremap <buffer><silent> o :enew <bar> startinsert<CR>
 
     set syntax=off
-    " nmap <ScrollWheelUp> <nop>
-    " nmap <S-ScrollWheelUp> <nop>
-    " nmap <C-ScrollWheelUp> <nop>
-    " nmap <ScrollWheelDown> <nop>
-    " nmap <S-ScrollWheelDown> <nop>
-    " nmap <C-ScrollWheelDown> <nop>
-    " nmap <ScrollWheelLeft> <nop>
-    " nmap <S-ScrollWheelLeft> <nop>
-    " nmap <C-ScrollWheelLeft> <nop>
-    " nmap <ScrollWheelRight> <nop>
-    " nmap <S-ScrollWheelRight> <nop>
-    " nmap <C-ScrollWheelRight> <nop>
+    "nmap <buffer> <ScrollWheelUp> <nop>
+    "nmap <buffer> <S-ScrollWheelUp> <nop>
+    "nmap <buffer> <C-ScrollWheelUp> <nop>
+    "nmap <buffer> <ScrollWheelDown> <nop>
+    "nmap <buffer> <S-ScrollWheelDown> <nop>
+    "nmap <buffer> <C-ScrollWheelDown> <nop>
+    nmap <buffer> <ScrollWheelLeft> <nop>
+    nmap <buffer> <S-ScrollWheelLeft> <nop>
+    nmap <buffer> <C-ScrollWheelLeft> <nop>
+    nmap <buffer> <ScrollWheelRight> <nop>
+    nmap <buffer> <S-ScrollWheelRight> <nop>
+    nmap <buffer> <C-ScrollWheelRight> <nop>
     
     nmap <C-a> :enew <bar> startinsert <bar> :Goyo 80<CR>
 endfun
@@ -328,10 +336,12 @@ let g:UltiSnipsSnippetDirectories=[$HOME . "/.config/nvim/UltiSnips"]
 
 function! SetupEnvironment()
   if (&ft == 'markdown' || $ft == 'txt' || $ft == 'tex')
-    setlocal wrap
+    setlocal wrap 
+    let b:coc_suggest_disable=1
   endif
 
   if (&ft == 'tex')
+    setlocal wrap
     let b:coc_suggest_disable=1
     let g:UltiSnipsExpandTrigger = '<tab>'
     let g:UltiSnipsJumpForwardTrigger = '<c-m>'
@@ -339,7 +349,7 @@ function! SetupEnvironment()
   endif
 endfunction
 
-inoremap <silent> <tab> <Esc>:call UltiSnips#ExpandSnippetOrJump()<cr>
+" inoremap <silent> <tab> <Esc>:call UltiSnips#ExpandSnippetOrJump()<cr>
 
 
 autocmd! BufReadPost,BufNewFile * call SetupEnvironment()
