@@ -71,6 +71,7 @@ alias gdelhelp='echo "just type the name of the event"'
 
 # pls 
 alias pls='sudo'
+alias please='sudo'
 
 # fuck
 alias fuck="sudo !!"
@@ -81,6 +82,9 @@ alias vim='nvim'
 alias n="nvim"
 alias neovim='nvim'
 alias v='nvim'
+
+# duplicate current alacritty unit
+alias dupe='setsid alacritty --working-directory "$(pwd)" &'
 
 # alias so i can copy stuff to my clipboard from my terminal
 # example:
