@@ -5,7 +5,7 @@
 [colors]
 background = #0d0d0d
 foreground = #ffffff
-theme = #c89263
+theme = #89adfa
 
 ; ._ _  _.*._ 
 ; [ | )(_]|[ )
@@ -19,11 +19,11 @@ radius = 9.0
 line-size = 3
 ;locale = tr_TR.UTF-8
 
-width = 99.3%
-height = 24
-offset-x = 7.5
-offset-y = 6
-padding-left = 3
+width = 99.7%
+height = 20
+offset-x = 4
+offset-y = 3
+padding-left = 2 
 padding-right = 2
 module-margin-left = 3
 module-margin-right = 0
@@ -141,9 +141,9 @@ time-alt = %H:%M:%S
 [module/memory]
 type = internal/memory
 interval = 3
-;format-foreground = ${colors.theme}
+format-foreground = ${colors.theme}
 format =   <label> 
-;label-foreground = ${colors.foreground}
+label-foreground = ${colors.foreground}
 label = %percentage_used%%
 
 ;  _.._ . .
@@ -173,7 +173,7 @@ unknown-as-up = true
 
 format-connected = 直<label-connected>
 format-connected-foreground = ${colors.theme}
-label-connected = %downspeed%
+label-connected = %downspeed% [%essid%]
 label-connected-foreground = ${colors.foreground}
 
 format-disconnected = 睊  <label-disconnected>
@@ -248,5 +248,6 @@ label-warn-foreground = #9b0a20
 type = custom/script
 tail = true
 format =    <label>
+label-foreground = ${colors.foreground}
 exec = pulseaudio-control --sink-nickname "alsa_output.pci-0000_00_1f.3.analog-stereo: " listen 
-format-foreground = ${colors.foreground}
+format-foreground = ${colors.theme}

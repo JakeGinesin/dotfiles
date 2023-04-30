@@ -298,6 +298,9 @@ endfun
 " Run after doing all the startup stuff
 autocmd VimEnter * call Start()
 
+let g:tex_fast = "bMpr"
+let g:tex_conceal = ""
+
 lua << EOF
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

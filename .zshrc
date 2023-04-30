@@ -84,7 +84,7 @@ alias neovim='nvim'
 alias v='nvim'
 
 # duplicate current alacritty unit
-alias dupe='setsid alacritty --working-directory "$(pwd)" &'
+alias dupe='setsid alacritty --working-directory "$(pwd)" > /dev/null'
 
 # alias so i can copy stuff to my clipboard from my terminal
 # example:

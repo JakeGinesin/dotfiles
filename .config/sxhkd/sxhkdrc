@@ -159,6 +159,10 @@ super + {shift} + {o}
 super + {ctrl} + {o}
   find /home/synchronous/Documents/Obsidian/Journal -follow | cut -c46- | grep -E '.md$' | grep -v "template" |  rofi -dmenu | read cdir && alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/$cdir -c "Goyo"
 
+# search my notes for current semester, then open terminal wherever it is
+super + {ctrl} + {c} 
+  find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read csem && alacritty --working-directory "/home/synchronous/current-semester/$csem"
+
 # screenshot stuff
 Print
     flameshot full -c
