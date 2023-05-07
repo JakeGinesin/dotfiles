@@ -149,7 +149,7 @@ super + {Left,Right}
 
 # open my notes file in nvim w/ a new alacritty window, then jump to end of file
 super + {o}
-  alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | Goyo"
+  alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | Goyo | autocmd VimResized * call GoyoWrapper()"
 
 # open my notes without goyo and with nvimteee
 super + {shift} + {o}
@@ -157,7 +157,7 @@ super + {shift} + {o}
 
 # search my notes using rofi and open the right one
 super + {ctrl} + {o}
-  find /home/synchronous/Documents/Obsidian/Journal -follow | cut -c46- | grep -E '.md$' | grep -v "template" |  rofi -dmenu | read cdir && alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/$cdir -c "Goyo"
+  find /home/synchronous/Documents/Obsidian/Journal -follow | cut -c46- | grep -E '.md$' | grep -v "template" |  rofi -dmenu | read cdir && alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/$cdir -c "Goyo | autocmd VimResized * call GoyoWrapper()"
 
 # search my notes for current semester, then open terminal wherever it is
 super + {ctrl} + {c} 

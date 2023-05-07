@@ -242,6 +242,22 @@ nnoremap <C-h>u :Telescope lsp_definitions<CR>
 nnoremap <C-h>e :Telescope<CR>git_
 nnoremap <C-h>h :Telescope<CR>
 
+" automatically resize goyo
+function! GoyoWrapper()
+    " Save the current cursor position
+    let l:pos = getpos('.')
+
+    " Close the current buffer
+    " silent! execute ':q'
+
+    " Start Goyo
+    execute ':Goyo'
+    execute ':Goyo'
+
+    " Restore the cursor position
+    call setpos('.', l:pos)
+endfunction
+
 fun! Start()
     " Don't run if: we have commandline arguments, we don't have an empty
     " buffer, if we've not invoked as vim or gvim, or if we'e start in insert mode
