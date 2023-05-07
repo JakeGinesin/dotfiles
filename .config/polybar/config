@@ -262,31 +262,4 @@ exec = "sh /home/synchronous/.config/polybar/cmus.sh 2> /dev/null | grep -v 'NO_
 label-foreground = ${colors.foreground}
 format-foreground = ${colors.theme}
 
-;[module/cmus]
-;type = custom/script
-;tail = true
-;format =♫  <label>
-;exec = sh /home/synchronous/.config/polybar/cmus.sh 2> /dev/null
-;label-foreground = ${colors.foreground}
-;format-foreground = ${colors.theme}
-;format-padding = -1
-
-;[module/cmus]
-;type = custom/script
-;tail = true
-;exec = sh /home/synchronous/.config/polybar/cmus.sh 2> /dev/null
-;label-foreground = ${colors.foreground}
-;format-foreground = ${colors.theme}
-
-; Conditionally display the prefix based on the output of the script
-;format-prefix = "♫  "
-;format-prefix-foreground = ${colors.foreground}
-;format-prefix-padding = 1
-;label = %output:~0:8:%
-;label-padding = 1
-
-; Hide module when the output is "NO_MUSIC"
-;hidden-state = %output:~0:8:~
-;hidden-state-text = "NO_MUSIC"
-
 
