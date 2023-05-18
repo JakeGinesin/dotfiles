@@ -1,0 +1,391 @@
+
+/* fonts/SIL Open Font License.txt */
+@font-face {
+	font-family: "OstrichSans";
+	src: url("fonts/ostrich-regular.ttf");
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("fonts/Montserrat-ExtraLight.otf");
+}
+
+
+body {
+	margin: 0;
+	background-color: #222;
+	min-height: 100vh;
+	font-family: "Montserrat", sans-serif;
+}
+
+div#left {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 50vw;
+	box-sizing: border-box;
+	padding: 40px;
+	color: white;
+}
+
+h1 {
+	font-size: 6em;
+	color: #333;
+	margin: 0;
+	text-align: right;
+	text-shadow: -5px 0px 0px rgba(0,0,0,.3);
+}
+
+h3 {
+	font-size: 4.5em;
+	color: #3d3d3d;
+	margin: 0;
+	text-align: right;
+	text-shadow: -4.5px 0px 0px rgba(0,0,0,.3);
+}
+
+h5 {
+	font-size: 2em;
+	color: #333;
+	margin: 0;
+	text-align: right;
+	text-shadow: -3px 0px 0px rgba(0,0,0,.3);
+}
+
+div#circle {
+  width: 100px;
+  height:100px;
+  background-color:#341A1A;
+  position:fixed;
+  border-radius:50px;
+  top:50%;
+  margin-top:-100px;
+  left:-50px;
+  box-shadow:-5px 10px 0px rgba(0,0,0,.3);
+  transition:.1 ease;
+}
+
+div#tooltip {
+  height:300px;
+  width:300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+  background-color:#2a1518;
+  box-shadow: -10px 10px 0px rgba(0,0,0,.3);
+  opacity:0%;
+  transition:.5s ease;
+  color:white;
+  padding:15px;
+  font-family: "Montserrat", sans-serif;
+  font-weight:bold;
+  font-size:16px;
+  z-index:500;
+}
+
+div#circle:hover + #tooltip {
+  opacity:100%;
+}
+
+div#circle:hover {
+  cursor:pointer;
+  background-color:#2b1619; 
+}
+
+/*
+	This section is for the cards.
+*/
+div#deck {
+	position: relative;
+	width: 50vw;
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	background-image: linear-gradient(140deg, transparent 75%, #341A1A 0%);
+	background-repeat: no-repeat;
+	transition: .3s background-position;
+	background-position: 50px 50px;
+
+	/* Horizontal and vertical center */
+	display: flex;
+	text-align: right;
+	justify-content: right;
+	justify-content: flex-end; /*chrome users are mother bitches :)*/
+	align-items: center;
+	padding: 25px;
+	box-sizing: border-box;
+}
+
+div#deck:hover {
+	background-position: 0px 0px;
+}
+/*
+div#vignette {
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: radial-gradient(rgba(255,255,255,.3), rgba(0,0,0,.3));
+	opacity: 0;
+	transition: 1s opacity;
+	z-index: 50;
+}
+*/
+section.card {
+	will-change: transform;
+	will-change: margin;
+	text-align: left;
+	padding: 15px;
+	border-radius: 10px;
+	height: 250px;
+	min-width: 150px;
+	max-width: 150px;
+	display: inline-block;
+	transform: perspective(15cm) rotateX(0deg) rotateY(0deg);
+	z-index: 10;
+	transition: .2s box-shadow, .2s transform, .2s margin-left;
+	margin: 15px;
+	margin-left: -60px;
+	background-size: 4px;
+	color: white;
+	background-color: #333;
+	box-shadow: -5px 0px 0px rgba(0,0,0,.3);
+	border-top: 0px solid #111;
+	border: 2px solid black;
+	position: relative;
+}
+div#deck:hover section.card {
+	margin-left: 15px;
+}
+
+/*
+	This section is for everything inside the cards.
+*/
+section.card > h2:first-child {
+	margin: 0;
+	font-size: 3em;
+	font-family: "OstrichSans", sans-serif;
+	position: absolute;
+	color: #111;
+	bottom: 5px;
+	left: 15px;
+}
+section.card > hr {
+	border: none;
+	border-top: 1px solid white;
+}
+section.card > a {
+	text-decoration: none;
+	display: block;
+	font-size: 1em;
+	color: white;
+	position: relative;
+}
+section.card > a:hover:after {
+	content: "<";
+	right: 0px;
+	position: absolute;
+}
+
+/*
+	Clock
+*/
+div#clock {
+	position: relative;
+	margin: 0 auto;
+	width: 250px;
+	height: 250px;
+	border-radius: 250px;
+	border: 2px solid #111;
+	background-image: radial-gradient(white 5%, #333 5%);
+	box-shadow: -5px 0px 0px rgba(0,0,0,.3);
+	margin-right:32vw;
+	/* transition-duration:5s; */
+	transition-timing-function:ease;
+}
+div#clock > code#timestamp {
+	background-color: #111;
+	color: white;
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+div#clock > span {
+	position: absolute;
+	bottom: 50%;
+	left: 50%;
+	transform: translateY(-50%);
+	background-color: white;
+	transform-origin: bottom center;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	z-index: 1;
+}
+div#clock > span#hour {
+	width: 5px;
+	height: 70px;
+}
+div#clock > span#minute {
+	width: 3px;
+	height: 90px;
+}
+div#clock > span#second {
+	width: 1px;
+	height: 100px;
+	background-color: red;
+	z-index: 0;
+}
+/*
+	Text
+*/
+div#text {
+	position:absolute;
+	width:600px;
+	top:4vh;
+	left:18vw;
+	text-align:center;
+	justify-content:center;
+}
+div#text > h3 {
+	width:100%;
+	text-align:center;
+}
+div#text > h5 {
+	width:540px;
+}
+/*
+	Search
+*/
+form {
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	padding: 40px;
+	width: 50vw;
+	box-sizing: border-box;
+}
+form > input#search {
+	border: none;
+	padding: 15px;
+	font-size: 40px;
+	width: 90%;
+	box-sizing: border-box;
+	background-color: transparent;
+	border-bottom: 4px solid #333;
+	color: white;
+	float:right;
+	font-family: "Montserrat", sans-serif;
+}
+
+/*
+	Notes
+*/
+span#notebook {
+	border: 2px solid #111;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	width: 60px;
+	height: 60px;
+	border-radius: 60px;
+	font-size: 60px;
+	line-height: 60px;
+	cursor: pointer;
+	background-color: #333;
+	box-shadow: -5px 0px 0px rgba(0,0,0,.3);
+	color: #111;
+	font-weight: bold;
+	margin-top:28vh;
+}
+span#notebook:active {
+	background-color: #303030;
+	box-shadow: 0px 0px 0px rgba(0,0,0,.3);
+}
+textarea.note {
+	position: fixed;
+	width: 200px;
+	height: 200px;
+	background-color: red;
+	border: none;
+	padding: 15px;
+	resize: none;
+	box-shadow: -10px 10px 0px rgba(0,0,0,.3);
+	color: white;
+}
+
+/* center */
+div#center {
+	border-radius:50%;
+	position:absolute;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	width:80px;
+	height:80px;
+	background-color: #341A1A;
+	border:1px #1f1f1f solid;
+	display:inline-block;
+	z-index:2;
+}
+div#center:hover{
+	cursor:pointer;
+}
+
+/* changes for my laptop */
+@media only screen and (max-width: 1700px) {
+  span#notebook{
+		margin-top:13vh;
+	}
+	/* 4.5, 2 */
+	/* text-shadow: -4.5px 0px 0px rgba(0,0,0,.3); */
+	/* text-shadow: -3px 0px 0px rgba(0,0,0,.3); */
+	h3 {
+		font-size:4em;
+	}
+	h5 {
+		font-size:1.75em;
+	}
+	div#text{
+		width:550px;
+	}
+}
+
+@media only screen and (max-width:1500px){
+	div#text{
+		display:none;
+	}
+	div#deck{
+		display:none;
+	}
+}
+
+@media only screen and (max-width:900px){
+ form {
+	 width:65vw;
+ }
+}
+@media only screen and (max-width:650px){
+	div#clock{
+		display:none;
+	}
+	form {
+		width:100vw;
+		float:none;
+	}
+	form > input#search{
+		width:100%;
+	}
+	div#left{
+		width:100%;
+		display:block;
+		margin-top:20vh;
+	}
+	h1{
+		text-align:left;
+	}
+}
