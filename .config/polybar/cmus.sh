@@ -10,9 +10,9 @@ fi
 #sspot="$()"
 #if [[ "$eq" == "Paused" ]];then  
 
-if [[ "$eq" != "No players found" ]]; then
-  stitle="$(playerctl --player=spotify metadata --format "{{ title }}" )"
-  sartist="$(playerctl --player=spotify metadata --format "{{ artist }}")"
+if [[ "$eq" != "" ]]; then
+  stitle="$(playerctl --player=spotify metadata --format "{{ title }}" 2> /dev/null)"
+  sartist="$(playerctl --player=spotify metadata --format "{{ artist }}" 2> /dev/null)"
 
   if [ ${#sartist} -gt 13 ]; then
     sartist="${sartist:0:$((13))}.."
@@ -22,7 +22,7 @@ if [[ "$eq" != "No players found" ]]; then
     stitle="${stitle:0:$((20))}.."
   fi
 
-  soutput="$sartist - $stitle"
+  soutput="$sartist — $stitle"
   rb=""
   if [[ "$eq" == "Paused" ]]; then
     rb="| ";
@@ -50,7 +50,7 @@ elif [[ "$er" != "" ]]; then
 
   ss="$(cmus-remote -Q 2> /dev/null| awk -F/ NR==1'{print $NF}'|awk -F. '{print $1}')"
 
-  output="$artist - $title"
+  output="$artist — $title"
   scroll_length=30
 
   # if not playing
@@ -65,7 +65,7 @@ elif [[ "$er" != "" ]]; then
   fi
 
   echo "$output"
+else 
+  echo ""
 fi
-
-echo ""
 
