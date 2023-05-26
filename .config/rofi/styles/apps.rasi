@@ -1,0 +1,129 @@
+@import     "/home/chokerman/dotfiles/rofi/styles/colors.rasi"
+
+configuration {
+    font:               "Liga SFMono Nerd Font 13";
+    sidebar-mode:       false;
+    show-icons:         true;
+    icon-theme:         "Papirus-Apps";
+    matching:           "fuzzy";
+    run,drun {
+      fallback-icon:    "application-x-addon";
+    }
+}
+
+* {
+    pink:               @base0C;
+    cyan:               @base0F;
+    transparent:        #00000000;
+}
+
+window {
+    transparency:       "real";
+    background-color:   @background;
+    text-color:         @text;
+    location:           center;
+    x-offset:           15px;
+    y-offset:           -50px;
+    orientation:        vertical;
+}
+
+prompt {
+    enabled:            false;
+}
+
+button {
+    action:             "ok";
+    str:                " ";
+    font:               "Liga SFMono Nerd Font 13";
+    expand:             false;
+    text-color:         @text;
+    background-color:   @transparent;
+    vertical-align:     0.5;
+    horizontal-align:   0.5;
+}
+
+entry {
+    font:               "Liga SFMono Nerd Font 13";
+    background-color:   @transparent;
+    text-color:         @text;
+    expand:             true;
+    vertical-align:     0.5;
+    horizontal-align:   0;
+    placeholder:        "Select an option...";
+    blink:              true;
+}
+
+entry-wrapper {
+    orientation:        horizontal;
+    margin:             0 12px 0 12px;
+    spacing:            24px;
+    vertical-align:     0.5;
+    background-color:   @transparent;
+    children:           [ button, entry ];
+}
+
+inputbar {
+    padding:            14px;
+    margin:             10px 10px 14px 10px;
+    background-color:   @prompt;
+    text-color:         @text;
+    expand:             false;
+    border-radius:      9px;
+    position:           north;
+    children:           [ entry-wrapper ];
+}
+
+listview {
+    background-color:   @transparent;
+    spacing:            0;
+    cycle:              true;
+    dynamic:            true;
+    scrollbar:          true;
+}
+
+mainbox {
+    width:              200px;
+    expand:             true;
+    spacing:            12px;
+    padding:            5px;
+    background-color:   @background;
+    children:           [ inputbar, listview ];
+}
+
+scrollbar {
+    handle-width:       0;
+    margin:             0 0 5px 0;
+    border-radius:      9px;
+}
+
+element {
+    background-color:   @transparent;
+    text-color:         @text;
+    orientation:        horizontal;
+    border:             0;
+    border-radius:      6px;
+    spacing:            24px;
+    margin:             0px 12px 0px 12px;
+    padding:            10px 24px 10px 24px;
+}
+
+element-icon {
+    size:               24px;
+    border:             0;
+    border-color:       @transparent;
+    background-color:   transparent;
+}
+
+element-text {
+    highlight:          @pink;
+    font:               "Liga SFMono Nerd Font Regular 13";
+    expand:             true;
+    horizontal-align:   0;
+    vertical-align:     0.5;
+    color:              @text;
+    background-color:   transparent;
+}
+
+element-text selected {
+  text-color:           @cyan;
+}

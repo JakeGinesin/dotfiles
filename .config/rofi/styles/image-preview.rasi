@@ -1,0 +1,108 @@
+/* Make sure to change the font, which I have set to "Liga SFMono Nerd Font 15" in this config */
+
+configuration {
+    show-icons: true;
+}
+
+* {
+    pink:             #ff7eb6;
+    cyan:             #82cfff;
+
+    accent-color:     #ffffff;
+    urgent-color:     #ee5396;
+
+    background-color: transparent;
+    text-color:       #ffffff;
+    margin:             0;
+    padding:            0;
+}
+
+window {
+    location:           center;
+    anchor:             center;
+    fullscreen:         false;
+    y-offset:           -100px;
+
+    enabled:            true;
+    background-color:   #262626;
+    cursor:             "default";
+}
+
+inputbar {
+    enabled:            true;
+    background-color:   #161616;
+    padding:            10px;
+    children:           ["entry"];
+}
+
+entry {
+    enabled:            true;
+    padding:            0.75em 1.25em;
+    cursor:             text;
+}
+
+listview {
+    enabled:            true;
+    columns:            1;
+    lines:              6;
+    cycle:              true;
+    dynamic:            true;
+    scrollbar:          false;
+    layout:             vertical;
+    reverse:            false;
+    fixed-height:       true;
+    fixed-columns:      true;
+    margin:             0.5em 0 0.75em;
+    cursor:             "default";
+}
+
+prompt {
+    text-color:         @accent-color;
+}
+
+textbox {
+    padding:            0.5em 1.5em;
+    background-color:   #161616;
+}
+
+element {
+    enabled:            true;
+    padding:            0.75em 1.25em;
+    cursor:             pointer;
+    orientation:        horizontal;
+}
+
+element-text {
+    highlight:          @pink;
+    cursor:             inherit;
+    vertical-align:     0.5;
+    horizontal-align:   0.0;
+    font:              "Liga SFMono Nerd Font 15";
+}
+
+element-text selected {
+  text-color: @cyan;
+}
+
+@media (min-width: 2400) {
+    listview {
+        rows:                    12;
+    }
+}
+
+@media (min-width: 3440) {
+    listview {
+        rows:                    16;
+    }
+}
+
+element-icon {
+    padding:                        -40px 0px;
+    border:                         4px 4px solid 4px 4px;
+    border-radius:                  10;
+    size:                           180;
+}
+
+element-icon selected {
+    border-color:                   @pink;
+}

@@ -1,17 +1,20 @@
 configuration {
+	font: "Liga SFMono Nerd Font 12";
   show-icons: true;
+  icon-theme: "Papirus";
   display-drun: "";
   display-run: "";
   display-window: "﩯 ";
   display-combi: "  ";
+	terminal: "footclient";
 	kb-remove-char-back: "BackSpace";
 	kb-remove-to-eol: "Control+Shift+e";
 	kb-accept-entry: "Control+m,Return,KP_Enter";
 	kb-mode-next: "Shift+Right,Control+Tab,Control+l";
 	kb-mode-previous: "Shift+Left,Control+Shift+Tab,Control+h";
 	kb-mode-complete: "Control+p";
-  kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
-  kb-row-down: "Down,Control+j";
+	kb-row-up: "Up,Control+k,Shift+Tab,Shift+ISO_Left_Tab";
+	kb-row-down: "Down,Control+j";
   timeout {
       action: "kb-cancel";
       delay:  0;
@@ -22,4 +25,4 @@ configuration {
   }
 }
 
-@theme "~/.config/rofi/styles/main.rasi"
+@theme "~/.config/rofi/material.rasi"

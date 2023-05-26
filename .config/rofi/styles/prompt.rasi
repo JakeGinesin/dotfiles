@@ -1,0 +1,98 @@
+configuration {
+		show-icons: true;
+		modi: "drun,calc,window";
+		show: "drun";
+        font: "Liga SFMono Nerd Font";
+        icon-theme: "Papirus-Dark";
+        drun {
+            fallback-icon: "package-x-generic";
+        }
+}
+
+configuration {
+    font: "Liga SFMono Nerd Font 16";
+    line-margin: 10;
+
+    display-ssh:    "";
+    display-run:    "";
+    display-drun:   "";
+    display-window: "";
+    display-combi:  "";
+    display-emoji: "ﲃ";
+    display-calc: "";
+    display-clipboard: "";
+    fixed-num-lines: false;
+    show-icons:     true;
+    transparency: "real";
+}
+
+// THEME
+* {
+    vertical-align: 0.5;
+    
+    // Colors
+    fg: #ffffff;
+    transparent: #00000000;
+}
+window {
+    location:   north;
+    anchor:   north;
+    orientation:   horizontal;
+    children:   [mainbox];
+    y-offset:   250px;
+    border: 2px;
+    border-radius: 0;
+}
+window {
+    background-color: #161616;
+    //background-color: @bg;
+}
+mainbox,inputbar,listview,message,textbox,prompt,entry{
+    background-color: @transparent;
+}
+
+// Inputbar
+inputbar {
+    padding: 2px;
+    children: [prompt,entry];
+}
+prompt {
+    font: "Liga SFMono Nerd Font 16";
+    padding: 0 16px 0 8px;
+    color: @fg;
+}
+entry {
+    color: @fg;
+    placeholder: "";
+}
+
+// Element
+listview {
+    border: none;
+    scrollbar: false;
+}
+element, message {
+    padding: 5px;
+    border-radius: 0;
+}
+element normal.normal, element alternate.normal, scrollbar {
+    background-color: @transparent;
+}
+element-icon, element-text {
+    background-color: @transparent;
+    color: @fg;
+}
+element-icon {
+    padding: 0 8px 0 0;
+}
+scrollbar {
+    handle-color: @fg;
+}
+
+// Message
+message {
+    border: none;
+}
+textbox {
+    color: @fg;
+}

@@ -64,8 +64,8 @@ super + {_,shift + }{j,k,i,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
+# super + {p,b,comma,period}
+#	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
@@ -95,17 +95,19 @@ super + alt + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
 # preselect
 #
 
+# jake thinks preselecting is not very useful, gg
+
 # preselect the direction
-super + ctrl + {j,k,i,l}
-	bspc node -p {west,south,north,east}
+# super + ctrl + {j,k,i,l}
+#	bspc node -p {west,south,north,east}
 
 # preselect the ratio
 #super + ctrl + {1-9}
 #	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-super + ctrl + space
-	bspc node -p cancel
+# super + ctrl + space
+#	bspc node -p cancel
 
 # cancel the preselection for the focused desktop
 #super + ctrl + shift + space
@@ -147,9 +149,10 @@ super + {Left,Right}
 # super + {o}
 #    obsidian
 
+# alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | Goyo | autocmd VimResized * call GoyoWrapper()"
 # open my notes file in nvim w/ a new alacritty window, then jump to end of file
 super + {o}
-  alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | Goyo | autocmd VimResized * call GoyoWrapper()"
+  sh /home/synchronous/.scripts/vimwiki/open_daily.sh
 
 # open my notes without goyo and with nvimteee
 super + {shift} + {o}
@@ -157,11 +160,14 @@ super + {shift} + {o}
 
 # search my notes using rofi and open the right one
 super + {ctrl} + {o}
-  find /home/synchronous/Documents/Obsidian/Journal -follow | cut -c46- | grep -E '.md$' | grep -v "template" |  rofi -dmenu | read cdir && alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/$cdir -c "Goyo | autocmd VimResized * call GoyoWrapper()"
+  sh /home/synchronous/.scripts/vimwiki/search_notes.sh
 
 # search my notes for current semester, then open terminal wherever it is
 super + {ctrl} + {c} 
   find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read csem && alacritty --working-directory "/home/synchronous/current-semester/$csem"
+
+super + {p}
+  alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Todo.md -c "execute 'normal gg' | Goyo | autocmd VimResized * call GoyoWrapper()"
 
 # screenshot stuff
 Print

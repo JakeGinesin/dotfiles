@@ -242,20 +242,28 @@ nnoremap <C-h>u :Telescope lsp_definitions<CR>
 nnoremap <C-h>e :Telescope<CR>git_
 nnoremap <C-h>h :Telescope<CR>
 
-" automatically resize goyo
-function! GoyoWrapper()
-    " Save the current cursor position
-    let l:pos = getpos('.')
 
-    " Close the current buffer
-    " silent! execute ':q'
+" vim wiki shit
 
-    " Start Goyo
-    execute ':Goyo'
-    execute ':Goyo'
+" auto resize goyo
+autocmd VimResized * if exists('#goyo') | exe "normal \<c-w>=" | endif
 
-    " Restore the cursor position
-    call setpos('.', l:pos)
+augroup custom_syntax
+    autocmd!
+    autocmd BufEnter /home/synchronous/Documents/Obsidian/Journal/abstract/*.md set syntax=markdown | syntax match LinkPattern /[a-zA-Z0-9][a-zA-Z0-9]*\.md/ | highlight LinkPattern guifg=LightBlue gui=underline
+augroup END
+
+augroup custom_syntax2
+    autocmd!
+    autocmd BufEnter /home/synchronous/Documents/Obsidian/Journal/Daily.md set syntax=markdown | syntax match LinkPattern /[a-zA-Z0-9][a-zA-Z0-9]*\.md/ | highlight LinkPattern guifg=LightBlue gui=underline
+augroup END
+
+function! CustomGf()
+  " Execute gf
+  normal! gf
+  execute ':syntax on'
+  execute ':nnoremap gf :call CustomGf()<CR> | syntax match LinkPattern /[a-zA-Z0-9][a-zA-Z0-9]*\.md/ | highlight LinkPattern guifg=LightBlue gui=underline | set path+=/home/synchronous/Documents/Obsidian/Journal/abstract'
+  execute ':set wrap'
 endfunction
 
 fun! Start()
@@ -354,7 +362,7 @@ EOF
 let g:UltiSnipsSnippetDirectories=[$HOME . "/.config/nvim/UltiSnips"]
 
 function! SetupEnvironment()
-  if (&ft == 'markdown' || $ft == 'txt' || $ft == 'tex')
+  if (&ft == 'markdown' || &ft == 'txt' || &ft == 'tex')
     setlocal wrap 
     let b:coc_suggest_disable=1
   endif
