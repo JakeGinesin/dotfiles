@@ -1,12 +1,9 @@
 set window-title-basename "true"
 set selection-clipboard "clipboard"
 
-# Dracula color theme for Zathura
+# (altered) Dracula color theme for Zathura
+# tldr, I made things much more *dark* and *edgy*
 # Swaps Foreground for Background to get a light version if the user prefers
-
-#
-# Dracula color theme
-#
 
 set notification-error-bg       "#ff5555" # Red
 set notification-error-fg       "#f8f8f2" # Foreground

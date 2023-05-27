@@ -29,6 +29,7 @@ window {
     cursor:             "default";  
     border: 1px;
     border-color: #565657;
+    width: 700px;
 }
 
 inputbar {

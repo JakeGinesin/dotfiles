@@ -1,5 +1,5 @@
 #!/bin/sh
-INPUT=$(rofi -dmenu -p "" -theme ~/dotfiles/rofi/styles/prompt.rasi)
+INPUT=$(rofi -dmenu -p "" -theme ~/.config/rofi/styles/prompt.rasi)
 [ -z "$INPUT" ] && exit 1
 
 zenity --progress --text="Waiting for an answer" --pulsate &

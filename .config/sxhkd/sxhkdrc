@@ -167,7 +167,7 @@ super + {ctrl} + {c}
   find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read csem && alacritty --working-directory "/home/synchronous/current-semester/$csem"
 
 super + {p}
-  alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Todo.md -c "execute 'normal gg' | Goyo | autocmd VimResized * call GoyoWrapper()"
+  sh /home/synchronous/.scripts/vimwiki/open_todo.sh
 
 # screenshot stuff
 Print
