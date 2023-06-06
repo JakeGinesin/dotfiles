@@ -156,7 +156,7 @@ super + {o}
 
 # open my notes without goyo and with nvimteee
 super + {shift} + {o}
-  alacritty -e nvim /home/synchronous/Documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | NvimTreeOpen /home/synchronous/Documents/Obsidian/Journal"
+  alacritty -e nvim /home/synchronous/documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | NvimTreeOpen /home/synchronous/Documents/Obsidian/Journal"
 
 # search my notes using rofi and open the right one
 super + {ctrl} + {o}

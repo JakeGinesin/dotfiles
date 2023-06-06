@@ -59,15 +59,20 @@ alias nrc='nvim ~/.config/nvim/init.vim'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
 
 # gcalcli stuff
-alias today='gcalcli agenda "$(date "+%b %d %Y %H:%m")" "$(date -d "$date +24 hour" "+%b %d %Y %H:%m")" --details location --color-date blue'
-alias week='gcalcli calw --color-date blue --color-now-marker red'
-alias weekl='gcalcli agenda "$(date "+%b %d %Y %H:%m")" "$(date -d "$date +168 hour" "+%b %d %Y %H:%m")" --details location --color-date blue'
-alias weekc='gcalcli calw --color-date blue --color-now-marker red'
-alias month='gcalcli calm --color-date blue --color-now-marker red'
-alias gadd='gcalcli --calendar jakeginesin@gmail.com add --noprompt'
-alias gaddhelp='echo "--title <title> --when <X:XX pm/am> --duration <mins>"'
-alias gdel='gcalcli --calendar jakeginesin@gmail.com delete --color-date blue'
-alias gdelhelp='echo "just type the name of the event"'
+# (note: gcalcli is fucking awesome, but i have a google calendar synching issue with it. 
+#   Google APIs are truly degenerate. I'm swtitching to vdirsyncer and khal for now.)
+# alias today='gcalcli agenda "$(date "+%b %d %Y %H:%m")" "$(date -d "$date +24 hour" "+%b %d %Y %H:%m")" --details location --color-date blue'
+# alias week='gcalcli calw --color-date blue --color-now-marker red'
+# alias weekl='gcalcli agenda "$(date "+%b %d %Y %H:%m")" "$(date -d "$date +168 hour" "+%b %d %Y %H:%m")" --details location --color-date blue'
+# alias weekc='gcalcli calw --color-date blue --color-now-marker red'
+# alias month='gcalcli calm --color-date blue --color-now-marker red'
+# alias gadd='gcalcli --calendar jakeginesin@gmail.com add --noprompt'
+# alias gaddhelp='echo "--title <title> --when <X:XX pm/am> --duration <mins>"'
+# alias gdel='gcalcli --calendar jakeginesin@gmail.com delete --color-date blue'
+# alias gdelhelp='echo "just type the name of the event"'
+
+alias today='sh /home/synchronous/.scripts/calendar/run_khal.sh'
+alias calendar='khal interactive'
 
 # pls 
 alias pls='sudo'
