@@ -39,7 +39,7 @@ font-2 = "Noto Sans Symbols:size=13;1"
 
 modules-left = date battery cpu memory coretemp pulseaudio-control network cmus 
 modules-center = title
-modules-right = xkeyboard bspwm
+modules-right = pomodoro xkeyboard bspwm
 
 dim-value = 1.0
 
@@ -259,6 +259,14 @@ tail = true
 format =♫  <label>
 exec-if = "sh /home/synchronous/.config/polybar/cmus.sh 2> /dev/null | grep -v 'NO_MUSIC'"
 exec = "sh /home/synchronous/.config/polybar/cmus.sh 2> /dev/null | grep -v 'NO_MUSIC'"
+label-foreground = ${colors.foreground}
+format-foreground = ${colors.theme}
+
+[module/pomodoro]
+type = custom/script
+tail = true
+format = <label>
+exec = "python3 /home/synchronous/.config/polybar/scripts/gnome-dbus.py 2> /dev/null"
 label-foreground = ${colors.foreground}
 format-foreground = ${colors.theme}
 
