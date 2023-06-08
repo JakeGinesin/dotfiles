@@ -266,7 +266,7 @@ format-foreground = ${colors.theme}
 type = custom/script
 tail = true
 format = <label>
-exec = "python3 /home/synchronous/.config/polybar/scripts/gnome-dbus.py 2> /dev/null"
+exec = "sh /home/synchronous/.config/polybar/pomodoro.sh"
 label-foreground = ${colors.foreground}
 format-foreground = ${colors.theme}
 
