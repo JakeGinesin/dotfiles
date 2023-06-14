@@ -59,7 +59,7 @@ type = internal/battery
 full-at = 99
 battery = BAT0
 adapter = AC0
-poll-interval = 5
+poll-interval = 10
 
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
@@ -141,7 +141,7 @@ time-alt = %H:%M:%S
 ; 
 [module/memory]
 type = internal/memory
-interval = 3
+interval = 4
 format-foreground = ${colors.theme}
 format =   <label> 
 label-foreground = ${colors.foreground}
@@ -153,7 +153,7 @@ label = %percentage_used%%
 ;
 [module/cpu]
 type = internal/cpu
-interval = 3
+interval = 4
 
 format =   <label> 
 format-foreground = ${colors.theme}
@@ -217,7 +217,7 @@ label-maxlen = 50
 ; 
 [module/coretemp]
 type = internal/temperature
-interval = 3
+interval = 5
 thermal-zone = 0
 ;
 ; NOTE: Run the command below and change the hwmon-path according to the output.
@@ -249,6 +249,7 @@ label-warn-foreground = #9b0a20
 type = custom/script
 tail = true
 format =    <label>
+interval = 1.0
 label-foreground = ${colors.foreground}
 exec = pulseaudio-control --format '$VOL_LEVEL%' listen  
 format-foreground = ${colors.theme}
@@ -257,7 +258,7 @@ format-foreground = ${colors.theme}
 type = custom/script
 tail = true
 format =♫  <label>
-exec-if = "sh /home/synchronous/.config/polybar/cmus.sh 2> /dev/null | grep -v 'NO_MUSIC'"
+interval = 5
 exec = "sh /home/synchronous/.config/polybar/cmus.sh 2> /dev/null | grep -v 'NO_MUSIC'"
 label-foreground = ${colors.foreground}
 format-foreground = ${colors.theme}
@@ -265,6 +266,7 @@ format-foreground = ${colors.theme}
 [module/pomodoro]
 type = custom/script
 tail = true
+interval = 1.0
 format = <label>
 exec = "sh /home/synchronous/.config/polybar/pomodoro.sh"
 label-foreground = ${colors.foreground}

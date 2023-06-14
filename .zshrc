@@ -116,7 +116,7 @@ alias pwiki='cd /home/synchronous/Programming/jake-wiki | git --git-dir /home/sy
 alias cls="clear"
 
 ## Curl Aliases for easy info
-alias weather="curl https://wttr.in/Boston; echo"
+alias weather="curl https://wttr.in/Oxford; echo"
 alias myip="curl https://ipecho.net/plain; echo"
 alias crypto="curl https://usd.rate.sx"
 alias pq="ping google.com -c 5"
