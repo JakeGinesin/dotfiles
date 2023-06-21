@@ -1,0 +1,33 @@
+[2023-06-14 10:01:04] - continue to chop things off my todo list
+[2023-06-14 10:31:04] - 
+[2023-06-14 11:01:05] - take more things off my todo
+[2023-06-14 11:31:06] - 
+[2023-06-15 06:38:54] - submit english assignment, chop off items
+[2023-06-15 07:12:34] - keybinds
+[2023-06-15 07:42:35] - continue building system
+[2023-06-15 08:12:36] - build document system
+[2023-06-15 08:42:36] - add paper methods to document organizer
+[2023-06-15 09:12:37] - continue w scripts
+[2023-06-15 09:42:38] - archive shit
+[2023-06-15 11:19:40] - A*
+[2023-06-15 11:49:41] - logic, A*, search
+[2023-06-17 15:26:21] - ltl synthesis
+[2023-06-17 15:56:22] - LTL PROGRAM SYNTHESIS BATBY
+[2023-06-17 16:26:23] - continue to work on the method
+[2023-06-17 18:47:21] - 
+[2023-06-18 10:26:19] - gaming
+[2023-06-18 10:56:19] - motivation section
+[2023-06-18 11:26:20] - approach
+[2023-06-18 11:56:21] - approach gaming
+[2023-06-18 12:29:02] - write down full algorithm on paper for program repair
+[2023-06-18 12:59:03] - finish algorithm
+[2023-06-18 13:29:04] - finish algo
+[2023-06-19 06:42:48] - kill tasks, find comp. of NFA
+[2023-06-19 07:16:56] - prove NFA->DFA safety
+[2023-06-19 07:46:57] - continue to prove method
+[2023-06-20 06:59:41] - search
+[2023-06-20 07:29:42] - algo
+[2023-06-20 07:59:43] - ALGO ALGO ALGO
+[2023-06-21 10:13:04] - scripts
+[2023-06-21 10:43:05] - 
+[2023-06-21 11:13:06] - more scripting/improving

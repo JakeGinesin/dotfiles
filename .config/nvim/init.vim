@@ -364,6 +364,7 @@ let g:UltiSnipsSnippetDirectories=[$HOME . "/.config/nvim/UltiSnips"]
 function! SetupEnvironment()
   if (&ft == 'markdown' || &ft == 'txt' || &ft == 'tex')
     setlocal wrap 
+    setlocal spell spelllang=en_us
     let b:coc_suggest_disable=1
   endif
 

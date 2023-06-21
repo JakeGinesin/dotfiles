@@ -259,6 +259,7 @@ type = custom/script
 tail = true
 format =♫  <label>
 interval = 5
+exec-if = "sh /home/synchronous/.config/polybar/cmus.sh 2> /dev/null | grep -v 'NO_MUSIC'"
 exec = "sh /home/synchronous/.config/polybar/cmus.sh 2> /dev/null | grep -v 'NO_MUSIC'"
 label-foreground = ${colors.foreground}
 format-foreground = ${colors.theme}

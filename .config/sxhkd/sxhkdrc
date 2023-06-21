@@ -156,13 +156,19 @@ super + {o}
 
 # open my notes without goyo and with nvimteee
 super + {shift} + {o}
-  alacritty -e nvim /home/synchronous/documents/Obsidian/Journal/Daily.md -c "execute 'normal G' | NvimTreeOpen /home/synchronous/Documents/Obsidian/Journal"
+  alacritty -e nvim /home/synchronous/journal/Daily.md -c "execute 'normal G' | NvimTreeOpen /home/synchronous/journal"
 
 # search my notes using rofi and open the right one
 super + {ctrl} + {o}
   sh /home/synchronous/.scripts/vimwiki/search_notes.sh
 
-# search my notes for current semester, then open terminal wherever it is
+super + {ctrl} + {p} 
+  sh /home/synchronous/.scripts/document-scripts/paper-search.sh
+
+super + {ctrl} + {l} 
+  sh /home/synchronous/.scripts/document-scripts/document-search.sh
+
+# search for current semester area, then open terminal wherever it is
 super + {ctrl} + {c} 
   find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read csem && alacritty --working-directory "/home/synchronous/current-semester/$csem"
 

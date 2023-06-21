@@ -136,6 +136,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias .4="cd ../../.."
 
+
 # replacing ls with exa & lsd
 # hrr drr why do you use lsd AND exa?
 # because lsd has icons but exa is better with everything else. smh. 
@@ -202,6 +203,11 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+function cdj() {
+  dir=$(sh /home/synchronous/.scripts/document-scripts/cdj.sh $1)
+  cd $dir 
+}
 
 # alias compp="g++ \\!* ~/Programming/cpp/a.out"
 
