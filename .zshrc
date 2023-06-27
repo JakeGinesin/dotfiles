@@ -106,9 +106,9 @@ alias intellishit="snap run intellij-idea-community"
 alias config='/usr/bin/git --git-dir=/home/synchronous/.cfg/ --work-tree=/home/synchronous'
 
 # stuff to for local webdev; 
-alias site="cd /home/synchronous/Programming/jake_site_static"
-alias website="cd /home/synchronous/Programming/jake_site_static"
-alias jakesite="cd /home/synchronous/Programming/jake_site_static"
+alias site="cd /home/synchronous/code/jake_dark_site"
+alias website="cd /home/synchronous/code/jake_dark_site"
+alias jakesite="cd /home/synchronous/code/jake_dark_site"
 alias wiki='cd /home/synchronous/Programming/jake-wiki | npm start --prefix /home/synchronous/Programming/jake-wiki'
 alias pwiki='cd /home/synchronous/Programming/jake-wiki | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki add . | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki commit -am "pog" | git --git-dir /home/synchronous/Programming/jake-wiki/.git --work-tree /home/synchronous/Programming/jake-wiki push'
 
@@ -116,6 +116,7 @@ alias pwiki='cd /home/synchronous/Programming/jake-wiki | git --git-dir /home/sy
 alias cls="clear"
 
 ## Curl Aliases for easy info
+# note for jake: try to change this back when you go back to boston lmfao
 alias weather="curl https://wttr.in/Oxford; echo"
 alias myip="curl https://ipecho.net/plain; echo"
 alias crypto="curl https://usd.rate.sx"
