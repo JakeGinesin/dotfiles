@@ -146,6 +146,10 @@ super + {shift} + {f}
 super + {Left,Right}
     bspc desktop -f {prev,next}
 
+ctrl + super + {Left,Right}
+    sh /home/synchronous/.scripts/bspwm/fast-shift.sh {left,right}
+
+
 # super + {o}
 #    obsidian
 

@@ -38,7 +38,7 @@ plugins=(
     history-substring-search
     colored-man-pages
     zsh-syntax-highlighting
-    zsh-z
+#     zsh-z
 )
 source $ZSH/oh-my-zsh.sh
 
