@@ -179,6 +179,9 @@ super + {ctrl} + {c}
 super + {p}
   sh /home/synchronous/.scripts/vimwiki/open_todo.sh
 
+super + {b}
+  sh /home/synchronous/.budgeting/open_budget.sh
+
 # screenshot stuff
 Print
     flameshot full -c

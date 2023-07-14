@@ -186,16 +186,15 @@ bindkey '^H' backward-kill-word
 bindkey '5~' kill-word
 
 # ------------------- More Widgets
-run_ranger () {
-    echo
-    ranger --choosedir=$HOME/.rangedir < $TTY
-    LASTDIR='cat $HOME/.rangerdir'
-    cd "$LASTDIR"
-    zle reset-prompt
-}
-zle -N run_ranger
+#run_ranger () {
+##    echo
+#    ranger --choosedir=$HOME/.rangedir < $TTY
+#    LASTDIR='cat $HOME/.rangerdir'
+#    cd "$LASTDIR"
+#    zle reset-prompt
+#}
+#zle -N run_ranger
 
-bindkey '^o' run_ranger
 
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
@@ -209,6 +208,16 @@ function cdj() {
   dir=$(sh /home/synchronous/.scripts/document-scripts/cdj.sh $1)
   cd $dir 
 }
+
+# ------ NNN (not no not november)
+export PATH=/home/synchronous/.scripts/nnn:$PATH
+export VISUAL=wrapper.sh
+export EDITOR="$VISUAL"
+export NNN_PLUG='m:preview-tui;'
+export NNN_FIFO=/tmp/nnn.fifo
+export NNN_TERMINAL=alacritty
+
+bindkey -s '^o' 'nnn -e ^M'
 
 # alias compp="g++ \\!* ~/Programming/cpp/a.out"
 
