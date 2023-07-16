@@ -217,7 +217,7 @@ toggle_preview() {
     else
         [ -p "$NNN_PPIPE" ] && printf "1" > "$NNN_PPIPE"
         start_preview "$1" "$QLPATH"
-        sleep 0.3 && bspc node -f last
+        sleep 0.7 && bspc node -f last
     fi
 }
 
