@@ -12,4 +12,5 @@ fi
 RANDOM_FILE=${FILES[RANDOM % ${#FILES[@]}]}
 FILENAME=$(basename "$RANDOM_FILE")
 
-alacritty -t "$rcv" -e nvim $RANDOM_FILE -c "Goyo | syntax match LinkPattern /[a-zA-Z0-9][a-zA-Z0-9]*\.md/ | highlight LinkPattern guifg=LightBlue gui=underline | nnoremap <CR> :call CustomGf()<CR> | nnoremap gf :call CustomGf()<CR> | set path+=/home/synchronous/journal/abstract"
+alacritty -t "$rcv" -e nvim $RANDOM_FILE -c "Goyo | syntax match LinkPattern /[a-zA-Z0-9\-][a-zA-Z0-9\-]*\.md/ | highlight LinkPattern guifg=LightBlue gui=underline | nnoremap <CR> :call CustomGf()<CR> | nnoremap gf :call CustomGf()<CR> | set path+=/home/synchronous/journal/abstract"
+

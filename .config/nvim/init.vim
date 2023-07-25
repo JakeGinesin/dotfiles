@@ -24,6 +24,7 @@ call plug#begin("~/.vim/plugged")
  Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
  Plug 'nvim-tree/nvim-tree.lua'
  Plug 'ggandor/leap.nvim'
+ Plug 'whonore/Coqtail'
 
   
 
@@ -218,6 +219,9 @@ tnoremap <Esc> <C-\><C-n>
 
 " nnoremap <silent> <C-q> <C-w>s<C-w>j:resize 20<CR>:terminal<CR><S-i>
 
+" coq leader
+let mapleader = ","
+
 " Focus commands
 nnoremap <C-a>z :Goyo 80<CR>
 nnoremap <C-a>q :Goyo!<CR>
@@ -319,6 +323,23 @@ fun! Start()
     nmap <C-a> :enew <bar> startinsert <bar> :Goyo 80<CR>
 endfun
 
+" Define a variable to keep track of the wrap state
+let g:wrap_on = 0
+
+" Define a function to toggle wrap on or off
+function! ToggleWrap()
+    if g:wrap_on
+        set nowrap
+        let g:wrap_on = 0
+    else
+        set wrap
+        let g:wrap_on = 1
+    endif
+endfunction
+
+" Bind Ctrl-w to the ToggleWrap function
+nnoremap <C-w> :call ToggleWrap()<CR>
+
 " Run after doing all the startup stuff
 autocmd VimEnter * call Start()
 
@@ -364,7 +385,6 @@ let g:UltiSnipsSnippetDirectories=[$HOME . "/.config/nvim/UltiSnips"]
 function! SetupEnvironment()
   if (&ft == 'markdown' || &ft == 'txt' || &ft == 'tex')
     setlocal wrap 
-    setlocal spell spelllang=en_us
     let b:coc_suggest_disable=1
   endif
 

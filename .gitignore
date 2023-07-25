@@ -1,1 +1,3 @@
 /home/synchronous/.scripts/pomodoro/track.txt
+/home/synchronous/.scripts/pomodoro/on-start.sh
+/home/synchronous/.scripts/pomodoro/on-end.sh

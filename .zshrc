@@ -52,6 +52,7 @@ alias lock="sudo systemctl restart lightdm"
 
 # restart wifi
 alias wscan='systemctl restart iwd | iwctl station wlan0 scan | iwctl station wlan0 get-networks | rfkill unblock all && iwctl station wlan0 scan'
+alias wt='sudo systemctl restart iwd.service'
 
 # easy access to config files I access frequently
 alias zshrc='nvim /home/synchronous/.zshrc' 
