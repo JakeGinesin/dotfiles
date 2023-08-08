@@ -143,6 +143,7 @@ alias .4="cd ../../.."
 # hrr drr why do you use lsd AND exa?
 # because lsd has icons but exa is better with everything else. smh. 
 alias ls="lsd --group-dirs first"
+
 alias l="exa -al --color=always --git --group-directories-first"
 alias l.="exa -a --colour=always --git -u | egrep '^\.'"
 alias l1="exa -a1h --sort=type" 
@@ -164,7 +165,7 @@ alias mktar="tar -cvzf"
 alias zathura="zathura --fork"
 
 alias os='vim /home/synchronous/current-semester/computer-systems/notes/os.md'
-alias asm='echo "c->asm: gcc -S [file] \nc->executable: gcc [file] -no-pie -o [filename]"'
+alias asm='echo "c->asm: gcc -S [file] \nc->asm w/o fluff: gcc -S -O2 -fno-asynchronous-unwind-tables [file]\nc->executable: gcc [file] -no-pie -o [filename]"'
 alias urls='sh /home/synchronous/.scripts/info.sh'
 alias favorites='vim /home/synchronous/Programming/jake_dark_site/build/resources.md'
 alias outlook='firefoxpwa site launch 01GQJNBVPHJHYHPYNG8FGS5TX4'
