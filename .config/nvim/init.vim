@@ -263,11 +263,18 @@ augroup custom_syntax2
 augroup END
 
 function! CustomGf()
+  let filename = expand('<cfile>')
+
+  if filename == ''
+    return
+  endif
+
+  let output = system('/home/synchronous/.scripts/vimwiki/custom_gf.sh ' . shellescape(filename))
   " Execute gf
-  normal! gf
-  execute ':syntax on'
-  execute ':nnoremap gf :call CustomGf()<CR> | syntax match LinkPattern /[a-zA-Z0-9][a-zA-Z0-9]*\.md/ | highlight LinkPattern guifg=LightBlue gui=underline | set path+=/home/synchronous/Documents/Obsidian/Journal/abstract'
-  execute ':set wrap'
+  " normal! gf
+  " execute ':syntax on'
+  " execute ':nnoremap gf :call CustomGf()<CR> | syntax match LinkPattern /[a-zA-Z0-9][a-zA-Z0-9]*\.md/ | highlight LinkPattern guifg=LightBlue gui=underline | set path+=/home/synchronous/Documents/Obsidian/Journal/abstract'
+  " execute ':set wrap'
 endfunction
 
 fun! Start()
