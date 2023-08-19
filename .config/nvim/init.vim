@@ -26,7 +26,8 @@ call plug#begin("~/.vim/plugged")
  Plug 'ggandor/leap.nvim'
  Plug 'whonore/Coqtail'
 
-  
+ " markdown
+ " Plug 'preservim/vim-markdown'
 
  " lean shit
  " Plug 'Julian/lean.nvim'

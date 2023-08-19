@@ -170,6 +170,10 @@ alias urls='sh /home/synchronous/.scripts/info.sh'
 alias favorites='vim /home/synchronous/Programming/jake_dark_site/build/resources.md'
 alias outlook='firefoxpwa site launch 01GQJNBVPHJHYHPYNG8FGS5TX4'
 
+alias td='todo show -d -scd -sct'
+
+alias polybar-restart='pkill polybar && nohup polybar > /dev/null'
+
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fdfind --type f'

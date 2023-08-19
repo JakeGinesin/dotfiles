@@ -3,40 +3,32 @@ set dsp.alsa.device=default
 set mixer.alsa.device=default
 set mixer.alsa.channel=Master
 
-set altformat_current= %F%= %y
-set altformat_playlist= %f%= %y
+# set altformat_current= %F%= %y
+# set altformat_playlist= %y
 set altformat_title=cmus
-set altformat_trackwin= %f%= %y 
+# set altformat_trackwin= %f%= %y 
 set format_current= 
-set format_playlist= %a - %l 
+# set format_playlist= %a - %l 
 set format_title=cmus
-set format_trackwin= . %t%=  %y  
-set format_trackwin_va= . %t%=  %y  
+# set format_trackwin= . %t%=  %y  
+# set format_trackwin_va= . %t%=  %y  
 set confirm_run=true
 set aaa_mode=all
 set buffer_seconds=10
 set show_hidden=false
 set format_statusline= %{status} %t%= %1{follow} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }} 
 set format_title=cmus 
-set altformat_title=%f
-set altformat_trackwin= %f
+# set altformat_title=%f
+# set altformat_trackwin= %f
 set color_statusline_fg=blue
+set auto_expand_albums_selcur=false
+set auto_expand_albums_search=false
+set altformat_playlist=%d
 
-set lib_sort=artist album discnumber  title filename
+set lib_sort=artist title
 set play_sorted=false
 set repeat=true
 
-set auto_expand_albums_follow=true
-
-set output_plugin=alsa
-set dsp.alsa.device=default
-set mixer.alsa.device=default
-set mixer.alsa.channel=Master
-
-set format_treewin= %l
- 
-set altformat_title=%f
-set altformat_trackwin= %f%= %d
-set show_hidden=false
-
+set format_playlist_va= . %a - %t
+set color_win_title_fg=magenta
 

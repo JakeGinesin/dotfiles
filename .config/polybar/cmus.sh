@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+#
+is_valid_utf8() {
+    local input="$1"
+    local converted=$(echo -n "$input" | iconv -f utf-8 -t utf-16 | iconv -f utf-16 -t utf-8)
+    [[ "$input" == "$converted" ]] && return 0 || return 1
+}
 
 # if cmus or spotify isn't running, this exit will trigger
 er="$(cmus-remote -Q 2> /dev/null)"
@@ -30,6 +36,13 @@ if [[ "$eq" != "" ]]; then
     rb="> ";
   fi
   soutput="${rb}${soutput}"
+
+  if is_valid_utf8 "$soutput"; then
+    echo "$soutput"
+  else 
+    echo "not UTF-8 :("
+  fi
+
   echo "$soutput"
 elif [[ "$er" != "" ]]; then
   # if cmus isn't currently playing a song, this will trigger
@@ -64,7 +77,11 @@ elif [[ "$er" != "" ]]; then
     output="${r}${output}"
   fi
 
-  echo "$output"
+  if is_valid_utf8 "$output"; then
+    echo "$output"
+  else 
+    echo "not UTF-8 :("
+  fi
 else 
   echo ""
 fi
