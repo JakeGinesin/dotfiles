@@ -174,6 +174,11 @@ alias td='todo show -d -scd -sct'
 
 alias polybar-restart='pkill polybar && nohup polybar > /dev/null'
 
+# alias ytdl='alias ytdl="youtube-dl --extract-audio --audio-format mp3 --output "downloads/%(title)s.%(ext)s"'
+# alias ytdl="yt-dlp --extract-audio --audio-format mp3 --output "
+# alias ytdl="yt-dlp --extract-audio --audio-format mp3 --output '/home/synchronous/.music-not-tagged/%(title)s.%(ext)s'"
+alias ytdl="sh /home/synchronous/.scripts/music/ytdl.sh"
+
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fdfind --type f'

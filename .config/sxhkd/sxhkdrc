@@ -170,7 +170,7 @@ super + {ctrl} + {p}
   sh /home/synchronous/.scripts/document-scripts/paper-search.sh
 
 super + {ctrl} + {l} 
-  sh /home/synchronous/.scripts/document-scripts/document-search.sh
+  sh /home/synchronous/.scripts/document-scripts/document-search-fast.sh
 
 # search for current semester area, then open terminal wherever it is
 super + {ctrl} + {c} 
@@ -179,8 +179,12 @@ super + {ctrl} + {c}
 super + {p}
   sh /home/synchronous/.scripts/vimwiki/open_todo.sh
 
-super + {b}
-  sh /home/synchronous/.budgeting/open_budget.sh
+super + {m}
+  sh /home/synchronous/.scripts/vimwiki/open-learning.sh
+
+# super + {b}
+#   sh /home/synchronous/.budgeting/open_budget.sh
+
 
 # nnn
 super + {n}
