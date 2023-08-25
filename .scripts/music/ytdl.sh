@@ -1,5 +1,20 @@
 #!/bin/sh
 
+usage() {
+    echo "Usage: ./ytdl [URL] [options]"
+    echo "Download an mp3 from a given URL, process it, and optionally move it to the music directory."
+    echo ""
+    echo "Options:"
+    echo "  -h, --help       Show this help message and exit."
+    echo "  -na --no-auto    Does not automatically ."
+}
+
+# Check if '-h' or '--help' flags are passed
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ "$2" = "-h" ] || [ "$2" = "--help" ]; then
+    usage
+    exit 0
+fi
+
 # Ensure a URL is provided
 if [ -z "$1" ]; then
     echo "Error: No URL provided."
@@ -17,10 +32,19 @@ if ! yt-dlp --extract-audio --audio-format mp3 --output '/home/synchronous/.musi
 fi
 
 # Import into beets
-if ! /usr/bin/beet import -s /home/synchronous/.music-not-tagged/tmp.mp3 <<< "A"; then
-    echo "Error importing into beets."
-    exit 1
+
+if [ "$2" = "-na" ] || [ "$2" = "--no-auto" ]; then
+  if ! /usr/bin/beet import -s /home/synchronous/.music-not-tagged/tmp.mp3; then
+      echo "Error importing into beets."
+      exit 1
+  fi
+else 
+  if ! /usr/bin/beet import -s /home/synchronous/.music-not-tagged/tmp.mp3 <<< "A"; then
+      echo "Error importing into beets."
+      exit 1
+  fi
 fi
+
 
 # Remove all entries from beets
 if ! /usr/bin/beet ls | /usr/bin/beet remove -f; then

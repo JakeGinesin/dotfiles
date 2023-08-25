@@ -48,6 +48,8 @@ call plug#begin("~/.vim/plugged")
  " end CS3500 shit
 call plug#end()
 
+lua require('leap').add_default_mappings() 
+
 set nocompatible
 filetype on
 filetype plugin on

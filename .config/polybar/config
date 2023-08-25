@@ -11,8 +11,8 @@ theme = #89adfa
 ; [ | )(_]|[ )
 ; 
 [bar/mybar]
-;override-redirect = true
-;wm-restack = bspwm
+;override-redirect = false
+wm-restack = bspwm
 bottom = false
 ;fixed-center = true
 radius = 9.0

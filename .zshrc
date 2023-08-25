@@ -172,7 +172,7 @@ alias outlook='firefoxpwa site launch 01GQJNBVPHJHYHPYNG8FGS5TX4'
 
 alias td='todo show -d -scd -sct'
 
-alias polybar-restart='pkill polybar && nohup polybar > /dev/null'
+alias polybar-restart='pkill polybar; nohup polybar mybar > /dev/null &'
 
 # alias ytdl='alias ytdl="youtube-dl --extract-audio --audio-format mp3 --output "downloads/%(title)s.%(ext)s"'
 # alias ytdl="yt-dlp --extract-audio --audio-format mp3 --output "
