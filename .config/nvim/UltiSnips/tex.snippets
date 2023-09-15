@@ -43,6 +43,7 @@ snippet template "Basic template" b
 \newtheorem{exercise}[all]{Exercise}
 \newtheorem{proposition}[all]{Proposition}
 \newtheorem{example}[all]{Example}
+\newtheorem{theorem}{Theorem}
 
 \newenvironment{lecture}[1]{
 \t\section{\MakeUppercase{#1}}
@@ -59,10 +60,11 @@ snippet template "Basic template" b
 
 \title{$1}
 \author{Jake Ginesin}
+\date{}
 
 \begin{document}
 \maketitle
-	$2
+
 \end{document}
 endsnippet
 
@@ -358,17 +360,12 @@ snippet integer "Z" b
 \Z
 endsnippet
 
-context "math()"
-snippet '(?<!i)sts' "text subscript" irA
-_\text{$1} $0
-endsnippet
-
 snippet text "text" b
 \text{$1}$0
 endsnippet
 
 context "math()"
-snippet cvec "column vector" iA
+snippet cvec "column vector" i
 \begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
 endsnippet
 
@@ -379,7 +376,7 @@ endsnippet
 
 priority 100
 context "math()"
-snippet "([a-zA-Z])bar" "bar" riA
+snippet "([a-zA-Z])bar" "bar" ri
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 

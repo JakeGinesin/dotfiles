@@ -16,7 +16,7 @@ call plug#begin("~/.vim/plugged")
  Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
  Plug 'romgrk/barbar.nvim'
- Plug 'github/copilot.vim'
+ " Plug 'github/copilot.vim'
  Plug 'junegunn/goyo.vim'
  Plug 'nvim-lua/plenary.nvim'
  Plug 'nvim-telescope/telescope.nvim'
@@ -229,18 +229,18 @@ let mapleader = ","
 nnoremap <C-a>z :Goyo 80<CR>
 nnoremap <C-a>q :Goyo!<CR>
 
-let g:copilot_filetypes={
-      \ '*': v:false,
-      \ 'python': v:true,
-      \ 'rust': v:true,
-      \ 'cpp': v:true,
-      \ 'c': v:true,
-      \ 'java': v:true,
-      \ 'javascript': v:true,
-      \ 'typescript': v:true,
-      \ 'go': v:true,
-      \ 'pml': v:true
-      \ }
+" let g:copilot_filetypes={
+"      \ '*': v:false,
+"      \ 'python': v:true,
+"      \ 'rust': v:true,
+"      \ 'cpp': v:true,
+"      \ 'c': v:true,
+"      \ 'java': v:true,
+"      \ 'javascript': v:true,
+"      \ 'typescript': v:true,
+"      \ 'go': v:true,
+"      \ 'pml': v:true
+"      \ }
 
 " Telescope
 nnoremap <C-h>f :Telescope find_files<CR>

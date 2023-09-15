@@ -176,7 +176,10 @@ document.addEventListener("keydown", (event)=>{
           window.location="https://naizhengtan.github.io/23spring/";
           break;
        case "a":
-          window.location="https://web.northeastern.edu/dummit/teaching_sp23_4571.html";
+          window.location="https://www.ccs.neu.edu/home/hlnguyen/cs7800/fall19/index.html";
+          break;
+       case "f":
+          window.location="https://www.ccs.neu.edu/home/stavros/fsvs23.html"
           break;
        case "n":
           window.location="https://web.northeastern.edu/dummit/teaching_sp23_3527.html";

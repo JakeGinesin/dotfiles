@@ -27,6 +27,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # classpath for using junit
 export CLASSPATH=/home/synchronous/.classpath/junit-4.13.2.jar:/home/synchronous/.classpath/hamcrest-core-1.3.jar:
 
+export PATH=/home/synchronous/.local/bin:$PATH
+
 # Theme
 #ZSH_THEME="af-magic"
 ZSH_THEME="powerlevel10k/powerlevel10k" 
@@ -170,7 +172,7 @@ alias urls='sh /home/synchronous/.scripts/info.sh'
 alias favorites='vim /home/synchronous/Programming/jake_dark_site/build/resources.md'
 alias outlook='firefoxpwa site launch 01GQJNBVPHJHYHPYNG8FGS5TX4'
 
-alias td='todo show -d -scd -sct'
+# alias td='todo show -d -scd -sct'
 
 alias polybar-restart='pkill polybar; nohup polybar mybar > /dev/null &'
 
@@ -178,6 +180,10 @@ alias polybar-restart='pkill polybar; nohup polybar mybar > /dev/null &'
 # alias ytdl="yt-dlp --extract-audio --audio-format mp3 --output "
 # alias ytdl="yt-dlp --extract-audio --audio-format mp3 --output '/home/synchronous/.music-not-tagged/%(title)s.%(ext)s'"
 alias ytdl="sh /home/synchronous/.scripts/music/ytdl.sh"
+
+alias phone-mount="sh /home/synchronous/.scripts/phone-mount/mount.sh"
+alias phone-unmount="sh /home/synchronous/.scripts/phone-mount/unmount.sh"
+alias music-move="sh /home/synchronous/.scripts/music/music-move.sh"
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
