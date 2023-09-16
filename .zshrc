@@ -54,7 +54,7 @@ alias lock="sudo systemctl restart lightdm"
 
 # restart wifi
 alias wscan='systemctl restart iwd | iwctl station wlan0 scan | iwctl station wlan0 get-networks | rfkill unblock all && iwctl station wlan0 scan'
-alias wt='sudo systemctl restart iwd.service'
+alias wt='sudo systemctl restart iwd.service && polybar-restart'
 
 # easy access to config files I access frequently
 alias zshrc='nvim /home/synchronous/.zshrc' 
@@ -174,7 +174,7 @@ alias outlook='firefoxpwa site launch 01GQJNBVPHJHYHPYNG8FGS5TX4'
 
 # alias td='todo show -d -scd -sct'
 
-alias polybar-restart='pkill polybar; nohup polybar mybar > /dev/null &'
+alias polybar-restart='pkill polybar; setsid polybar mybar > /dev/null 2> /dev/null &> /dev/null'
 
 # alias ytdl='alias ytdl="youtube-dl --extract-audio --audio-format mp3 --output "downloads/%(title)s.%(ext)s"'
 # alias ytdl="yt-dlp --extract-audio --audio-format mp3 --output "

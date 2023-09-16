@@ -238,15 +238,17 @@ snippet lr< "leftangle rightangle" i
 \left<${1:${VISUAL}} \right>$0
 endsnippet
 
-snippet conj "conjugate" b
-\overline{$1}$0
-endsnippet
+# context "math()"
+# snippet conj "conjugate" i
+# \overline{$1}$0
+# endsnippet
 
 context "math()"
 snippet sum "sum" w
 \sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
 endsnippet
 
+context "math()"
 snippet lim "limit" w
 \lim_{${1:n} \to ${2:\infty}} 
 endsnippet

@@ -9,6 +9,9 @@ call plug#begin("~/.vim/plugged")
  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
  Plug 'ryanoasis/vim-devicons'
  Plug 'SirVer/ultisnips'
+    let g:UltiSnipsExpandTrigger = '<tab>'
+    let g:UltiSnipsJumpForwardTrigger = '<tab>'
+    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
  Plug 'honza/vim-snippets'
  Plug 'scrooloose/nerdtree'
  Plug 'preservim/nerdcommenter'
@@ -62,8 +65,8 @@ syntax on
 set number
 
 set shiftwidth=4
-set tabstop=4
-set expandtab
+" set tabstop=4
+" set expandtab
 set nobackup
 set scrolloff=10
 set incsearch
@@ -85,6 +88,9 @@ set cc=80
 set colorcolumn=0
 set t_Co=256
 let s:fontsize = 12
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
 
 " Clear highlighting on escape in normal mode
 nnoremap <esc> :noh<return><esc>
@@ -177,7 +183,6 @@ imap <C-BS> <C-W>
 imap <C-H> <C-W>
 
 " Set coc complete to be shift tab 
-inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 " set copilot complete to control shift tab
 " inoremap <expr> <S-Tab> copilot#Accept("\<CR>") 
 " let g:copilot_no_tab_map = v:true
@@ -215,7 +220,7 @@ let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', 
  nnoremap <C-l> <C-w>l 
 
 " term toggle 
-map <C-t> :term<CR>
+map <C-t> :term<CR>A
 
 " exit terminal mode mapping
 tnoremap <Esc> <C-\><C-n>
@@ -356,39 +361,6 @@ autocmd VimEnter * call Start()
 let g:tex_fast = "bMpr"
 let g:tex_conceal = ""
 
-lua << EOF
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
-vim.opt.termguicolors = true
-
-require('nvim-tree').setup()
-
-require('nvim-tree').setup({
-  sort_by = 'case_sensitive',
-  view = {
-    adaptive_size = false,
-    mappings = {
-      list = {
-        { key = 'u', action = 'dir_up' },
-      },
-    },
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-    exclude = {".git", ".jpg", ".mp4", ".ogg", ".iso", ".pdf", ".odt", ".png", ".gif", ".db", ".class"},
-  },
-  actions = {
-    open_file = {
-        resize_window = false
-    }
-  },
-})
-EOF
 
 let g:UltiSnipsSnippetDirectories=[$HOME . "/.config/nvim/UltiSnips"]
 
@@ -401,19 +373,25 @@ function! SetupEnvironment()
   if (&ft == 'tex')
     setlocal wrap
     let b:coc_suggest_disable=1
-    let g:UltiSnipsExpandTrigger = '<tab>'
-    let g:UltiSnipsJumpForwardTrigger = '<c-m>'
-    let g:UltiSnipsJumpBackwardTrigger = '<c-n>'
+    " this doesn't work for some weird reason
+    " let g:UltiSnipsExpandTrigger = '<tab>'
+    " let g:UltiSnipsJumpForwardTrigger = '<ctrl-m>'
+    " let g:UltiSnipsJumpBackwardTrigger = '<ctrl-n>'
+    setlocal spell
+    set spelllang=en_us
+    inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+  else 
+    inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
   endif
 endfunction
 
 " inoremap <silent> <tab> <Esc>:call UltiSnips#ExpandSnippetOrJump()<cr>
-
-
+"
 autocmd! BufReadPost,BufNewFile * call SetupEnvironment()
 
 " " sourcing other rcs
 source ~/.config/nvim/vimtex-rc.vim
 source ~/.config/nvim/bufferline-rc.vim
 source ~/.config/nvim/vimspector-rc.vim
+lua require'vimtree'
 
