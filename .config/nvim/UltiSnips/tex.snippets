@@ -15,7 +15,6 @@ snippet template "Basic template" b
 \documentclass[11pt]{article}
 \usepackage{amssymb}
 \usepackage{amsmath}
-\usepackage{fullpage}
 \usepackage{listings}
 \usepackage[utf8]{inputenc}
 \usepackage{parskip}
@@ -28,8 +27,6 @@ snippet template "Basic template" b
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{enumitem}
-\usepackage{euler}
-\usepackage{libertine}
 
 \usepackage{import}
 \usepackage{pdfpages}
@@ -65,6 +62,60 @@ snippet template "Basic template" b
 \begin{document}
 \maketitle
 
+\end{document}
+endsnippet
+
+snippet template-math "template for math hw" b
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm} 
+\usepackage{fullpage}
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage[linguistics]{forest}
+\usepackage{tikz}
+
+\usepackage{enumitem}
+\usepackage{euler}
+\usepackage{libertine}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+
+\newtheoremstyle{definitionstyle}
+{}
+{}
+{\normalfont}
+{}
+{\bfseries}
+{:}
+{0.5em}
+{}
+
+\theoremstyle{definitionstyle}
+\newtheorem{definition}{Definition}[section]
+
+\newtheorem{all}{Theorem}[section]
+\newtheorem{corollary}[all]{Corollary}
+\newtheorem{lemma}[all]{Lemma}
+\newtheorem{exercise}[all]{Exercise}
+\newtheorem{proposition}[all]{Proposition}
+\newtheorem{example}[all]{Example}
+\newtheorem{theorem}{Theorem}
+
+\title{$1}
+\author{Jake Ginesin}
+\date{}
+
+\begin{document}
+\maketitle
+	$0
 \end{document}
 endsnippet
 
@@ -137,7 +188,7 @@ endsnippet
 snippet dm "Math" wA
 \[
 ${1:${VISUAL}}
-.\] $0
+\] $0
 endsnippet
 
 snippet align "Align" b
@@ -156,7 +207,8 @@ snippet / "Fraction" i
 \\frac{${VISUAL}}{$1}$0
 endsnippet
 
-snippet in "In" b
+context "math()"
+snippet in "In" i
 \in
 endsnippet
 
@@ -262,20 +314,33 @@ snippet sq "\sqrt{}" i
 \sqrt{${1:${VISUAL}}}$0
 endsnippet
 
-snippet leq "leq" b
+context "math()"
+snippet leq "leq" iA
 \leq 
 endsnippet
 
-snippet geq "geq" b
+context "math()"
+snippet <= "leq" iA
+\leq 
+endsnippet
+
+context "math()"
+snippet geq "geq" iA
 \ge 
 endsnippet
 
-snippet forall "forall" b
+context "math()"
+snippet >= "geq" iA
+\ge 
+endsnippet
+
+context "math()"
+snippet forall "forall" i
 \forall 
 endsnippet
 
 priority 100
-snippet ** "cdot" b
+snippet ** "cdot" iA
 \cdot 
 endsnippet
 
@@ -301,11 +366,11 @@ endsnippet
 
 context "math()"
 snippet | "mid" iA
-\mid 
+\: \vert \:
 endsnippet
 
 priority 200
-snippet <-> "leftrightarrow" b
+snippet <-> "leftrightarrow" iA
 \leftrightarrow
 endsnippet
 
@@ -338,10 +403,6 @@ snippet notin "not in " b
 \not\in 
 endsnippet
 
-snippet inn "in " b
-\in 
-endsnippet
-
 snippet cap "cap" b
 \cap 
 endsnippet
@@ -372,7 +433,8 @@ snippet cvec "column vector" i
 endsnippet
 
 priority 10
-snippet "bar" "bar" i
+context "math()"
+snippet "obar" "bar" i
 \overline{$1}$0
 endsnippet
 
@@ -392,7 +454,7 @@ snippet "([a-zA-Z])hat" "hat" b
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
-snippet textit "italic" i
+snippet ita "italic" i
 \textit{$1}$0
 endsnippet
 
@@ -410,6 +472,18 @@ endsnippet
 
 snippet mathbf "mathbf" i
 \mathbf{$1}$0
+endsnippet
+
+snippet def "definition" b
+\begin{definition}[$1]
+	$0
+\end{definition}
+endsnippet
+
+snippet example "definition" b
+\begin{example}
+	$1
+\end{example}
 endsnippet
 
 # vim:ft=snippets
