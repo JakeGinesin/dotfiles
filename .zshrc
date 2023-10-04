@@ -120,7 +120,7 @@ alias cls="clear"
 
 ## Curl Aliases for easy info
 # note for jake: try to change this back when you go back to boston lmfao
-alias weather="curl https://wttr.in/Oxford; echo"
+alias weather="curl https://wttr.in/Boston; echo"
 alias myip="curl https://ipecho.net/plain; echo"
 alias crypto="curl https://usd.rate.sx"
 alias pq="ping google.com -c 5"
@@ -144,7 +144,7 @@ alias .4="cd ../../.."
 # replacing ls with exa & lsd
 # hrr drr why do you use lsd AND exa?
 # because lsd has icons but exa is better with everything else. smh. 
-alias ls="lsd --group-dirs first"
+alias ls="exa --icons --sort type"
 
 alias l="exa -al --color=always --git --group-directories-first"
 alias l.="exa -a --colour=always --git -u | egrep '^\.'"
@@ -184,6 +184,8 @@ alias ytdl="sh /home/synchronous/.scripts/music/ytdl.sh"
 alias phone-mount="sh /home/synchronous/.scripts/phone-mount/mount.sh"
 alias phone-unmount="sh /home/synchronous/.scripts/phone-mount/unmount.sh"
 alias music-move="sh /home/synchronous/.scripts/music/music-move.sh"
+
+alias ntpsync="sudo ntpdate pool.ntp.org"
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

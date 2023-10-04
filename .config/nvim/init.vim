@@ -11,7 +11,7 @@ call plug#begin("~/.vim/plugged")
  Plug 'SirVer/ultisnips'
     let g:UltiSnipsExpandTrigger = '<tab>'
     let g:UltiSnipsJumpForwardTrigger = '<tab>'
-    let g:UltiSnipsJumpBackwardTrigger = '<C-n>'
+    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
  Plug 'honza/vim-snippets'
  Plug 'scrooloose/nerdtree'
  Plug 'preservim/nerdcommenter'
@@ -368,6 +368,8 @@ function! SetupEnvironment()
   if (&ft == 'markdown' || &ft == 'txt' || &ft == 'tex')
     setlocal wrap 
     let b:coc_suggest_disable=1
+    setlocal spell
+    set spelllang=en_us
   endif
 
   if (&ft == 'tex')
@@ -383,6 +385,26 @@ function! SetupEnvironment()
   else 
     inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
   endif
+endfunction
+
+
+" nnoremap <leader>yl /\](<CR>vlT)y
+nnoremap <leader>yl ?\](<CR>lvi)y:nohlsearch<CR>
+
+nnoremap <leader>yb :call YankIfMatchesRegex()<CR>
+function! YankIfMatchesRegex()
+    " Get the word under the cursor
+    let word = expand('<cword>')
+
+    " Check if the word matches the regex pattern
+    if word =~ 'http[s]\?://\S\+'
+        " Yank the word
+        normal! viw
+        normal! y 
+        echo "Link yanked!"
+    else
+        echo "Not a valid link."
+    endif
 endfunction
 
 " inoremap <silent> <tab> <Esc>:call UltiSnips#ExpandSnippetOrJump()<cr>
