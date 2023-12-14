@@ -194,7 +194,7 @@ endsnippet
 snippet align "Align" b
 \begin{align*}
 	${1:${VISUAL}}
-.\end{align*}
+\end{align*}
 endsnippet
 
 context "math()"
@@ -443,6 +443,19 @@ context "math()"
 snippet "([a-zA-Z])bar" "bar" ri
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])__" "downer" iA
+`!p snip.rv=match.group(1)`_{$1}$2
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])^^" "upper" iA
+`!p snip.rv=match.group(1)`^^{$1}$2
+endsnippet
+
 
 priority 10
 snippet "hat" "hat" b

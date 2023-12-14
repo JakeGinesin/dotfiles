@@ -214,6 +214,9 @@ bindkey '5~' kill-word
 #}
 #zle -N run_ranger
 
+# --------------------- REMOTES CONFIG
+source /home/synchronous/.zshrc_remote
+
 
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'

@@ -15,7 +15,6 @@ theme = #89adfa
 wm-restack = bspwm
 bottom = false
 ;fixed-center = true
-radius = 9.0
 line-size = 3
 ;locale = tr_TR.UTF-8
 
