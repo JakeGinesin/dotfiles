@@ -53,7 +53,10 @@ alias python='python3'
 alias lock="sudo systemctl restart lightdm"
 
 # restart wifi
-alias wscan='systemctl restart iwd | iwctl station wlan0 scan | iwctl station wlan0 get-networks | rfkill unblock all && iwctl station wlan0 scan'
+# alias wscan='systemctl restart iwd | iwctl station wlan0 scan | iwctl station wlan0 get-networks | rfkill unblock all && iwctl station wlan0 scan'
+alias nw='iwctl station wlan0 scan; iwctl station wlan0 get-networks'
+alias iwc='iwctl station wlan0 connect'
+alias iwcn='iwctl station wlan0 connect NUwave'
 alias wt='sudo systemctl restart iwd.service && polybar-restart'
 
 # easy access to config files I access frequently
@@ -186,6 +189,10 @@ alias phone-unmount="sh /home/synchronous/.scripts/phone-mount/unmount.sh"
 alias music-move="sh /home/synchronous/.scripts/music/music-move.sh"
 
 alias ntpsync="sudo ntpdate pool.ntp.org"
+alias fb="cd /home/synchronous/code/tob/fb"
+alias nuid="echo 002141542"
+alias gb="sh /home/synchronous/.scripts/bluetooth/gb.sh"
+alias gbdc="bluetoothctl disconnect"
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
