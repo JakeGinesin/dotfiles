@@ -183,6 +183,7 @@ alias polybar-restart='pkill polybar; setsid polybar mybar > /dev/null 2> /dev/n
 # alias ytdl="yt-dlp --extract-audio --audio-format mp3 --output "
 # alias ytdl="yt-dlp --extract-audio --audio-format mp3 --output '/home/synchronous/.music-not-tagged/%(title)s.%(ext)s'"
 alias ytdl="sh /home/synchronous/.scripts/music/ytdl.sh"
+alias ytdl-mp3="yt-dlp -x --audio-format mp3 --audio-quality 0 -o '/home/synchronous/music/%(title)s.%(ext)s' "
 
 alias phone-mount="sh /home/synchronous/.scripts/phone-mount/mount.sh"
 alias phone-unmount="sh /home/synchronous/.scripts/phone-mount/unmount.sh"
@@ -193,6 +194,7 @@ alias fb="cd /home/synchronous/code/tob/fb"
 alias nuid="echo 002141542"
 alias gb="sh /home/synchronous/.scripts/bluetooth/gb.sh"
 alias gbdc="bluetoothctl disconnect"
+alias sxhkdrc="vim /home/synchronous/.config/sxhkd/sxhkdrc"
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -64,9 +64,12 @@ syntax on
 " num highlighting on
 set number
 
+" tab stuff
 set shiftwidth=4
-" set tabstop=4
-" set expandtab
+set tabstop=4
+set softtabstop=4
+set expandtab
+
 set nobackup
 set scrolloff=10
 set incsearch

@@ -36,8 +36,10 @@ super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
-super + g
-	bspc node -s biggest.window
+# super + g
+#	bspc node -s biggest.window
+super + g 
+  librewolf www.google.com
 
 #
 # state/flags
@@ -183,7 +185,7 @@ super + {ctrl} + {l}
 
 # search for current semester area, then open terminal wherever it is
 super + {ctrl} + {c} 
-  find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read csem && alacritty --working-directory "/home/synchronous/current-semester/$csem"
+  find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read csem && alacritty --working-directory "/home/synchronous/current-semester/$csem";
 
 super + {alt} + {c}
   find /home/synchronous/current-semester -follow -maxdepth 1 | cut -c36- | sed '/^[[:space:]]*$/d' | rofi -dmenu | read rsem; yq ".url" "/home/synchronous/current-semester/$rsem/info.yaml" | xargs librewolf
