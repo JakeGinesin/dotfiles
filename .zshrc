@@ -167,7 +167,9 @@ alias untar="tar -zxvf"
 alias mktar="tar -cvzf"
 
 # by default, put zathura windows in new process
-alias zathura="zathura --fork"
+# alias zathura="zathura --fork"
+alias zathura="sh /home/synchronous/.scripts/zathura/zathura_conditional.sh"
+alias exclude-zathura="pwd >> /home/synchronous/.scripts/zathura/excluded;echo 'done'"
 
 alias os='vim /home/synchronous/current-semester/computer-systems/notes/os.md'
 alias asm='echo "c->asm: gcc -S [file] \nc->asm w/o fluff: gcc -S -O2 -fno-asynchronous-unwind-tables [file]\nc->executable: gcc [file] -no-pie -o [filename]"'
