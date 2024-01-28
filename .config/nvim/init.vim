@@ -237,6 +237,13 @@ let mapleader = ","
 nnoremap <C-a>z :Goyo 80<CR>
 nnoremap <C-a>q :Goyo!<CR>
 
+" mapping control h,l to move forward and backward an entire word
+nnoremap <C-h> b
+nnoremap <C-l> w
+
+xnoremap <C-h> b
+xnoremap <C-l> w
+
 " let g:copilot_filetypes={
 "      \ '*': v:false,
 "      \ 'python': v:true,
@@ -251,11 +258,11 @@ nnoremap <C-a>q :Goyo!<CR>
 "      \ }
 
 " Telescope
-nnoremap <C-h>f :Telescope find_files<CR>
-nnoremap <C-h>d :Telescope live_grep<CR>
-nnoremap <C-h>u :Telescope lsp_definitions<CR>
-nnoremap <C-h>e :Telescope<CR>git_
-nnoremap <C-h>h :Telescope<CR>
+" nnoremap <C-h>f :Telescope find_files<CR>
+" nnoremap <C-h>d :Telescope live_grep<CR>
+" nnoremap <C-h>u :Telescope lsp_definitions<CR>
+" nnoremap <C-h>e :Telescope<CR>git_
+" nnoremap <C-h>h :Telescope<CR>
 
 
 " vim wiki shit

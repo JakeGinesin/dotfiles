@@ -41,6 +41,9 @@ super + y
 super + g 
   librewolf www.google.com
 
+super + shift + g
+  librewolf --new-window "www.google.com"
+
 #
 # state/flags
 #
@@ -130,18 +133,18 @@ XF86WakeUp + super + alt; {1,2,3,4,5,6,7,8,9,0}
 
 # expand a window by moving one of its side outward
 alt + {Left,Down,Up,Right}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+	bspc node -z {left -40 0,bottom 0 40,top 0 -40,right 40 0}
 
 # contract a window by moving one of its side inward
 alt + shift + {Left,Down,Up,Right}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+	bspc node -z {right -40 0,top 0 40,bottom 0 -40,left 40 0}
 
 alt + shift + w 
   rfkill unblock all | iwctl station wlan0 scan | iwctl station wlan0 get-networks 
 
 # move a floating window
 alt + {w,s,a,d}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
+	bspc node -v {-40 0,0 40,0 -40,40 0}
 
 # Alt tab window shifter
 alt + Tab
@@ -214,5 +217,3 @@ Print
 
 super + shift + s 
     flameshot gui
-
-

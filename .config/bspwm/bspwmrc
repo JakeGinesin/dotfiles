@@ -8,10 +8,10 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-xrandr --output HDMI-1 --same-as eDP-1
+xrandr --output eDP-1 --mode 1920x1080 --primary
+# xrandr --output HDMI-1 --mode 1920x1080 --same-as eDP-1 --scale 1x1
 
 bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
-# bspc monitor HDMI-1 -d 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
 
 bspc config border_width        2
 bspc config window_gap          2
@@ -19,6 +19,7 @@ bspc config window_gap          2
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+# bspc config merge_overlapping_monitors true
 bspc rule -a Zathura state=tiled
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on

@@ -21,6 +21,7 @@ unsetopt autocd beep extendedglob notify
 bindkey -v
 zstyle :compinstall filename '/home/synchronous/.zshrc'
 
+
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -35,15 +36,17 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # ------------------- Plugins
 plugins=(
-    fzf
+    # fzf
     git
     history-substring-search
     colored-man-pages
     zsh-syntax-highlighting
+    zsh-autosuggestions
 #     zsh-z
 )
 source $ZSH/oh-my-zsh.sh
 
+bindkey '^ ' autosuggest-accept
 # ------------------- Aliases
 
 # make sure i get the right version of python
@@ -197,6 +200,11 @@ alias nuid="echo 002141542"
 alias gb="sh /home/synchronous/.scripts/bluetooth/gb.sh"
 alias gbdc="bluetoothctl disconnect"
 alias sxhkdrc="vim /home/synchronous/.config/sxhkd/sxhkdrc"
+alias bspwmrc="vim /home/synchronous/.config/bspwm/bspwmrc"
+
+# monitor stuff
+alias dupe-display="sh /home/synchronous/.scripts/bspwm/dupe-display.sh"
+alias undo-dupe="sh /home/synchronous/.scripts/bspwm/reset-duplicate.sh"
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
