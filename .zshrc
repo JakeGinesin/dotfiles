@@ -206,6 +206,9 @@ alias bspwmrc="vim /home/synchronous/.config/bspwm/bspwmrc"
 alias dupe-display="sh /home/synchronous/.scripts/bspwm/dupe-display.sh"
 alias undo-dupe="sh /home/synchronous/.scripts/bspwm/reset-duplicate.sh"
 
+# termbin
+alias termbin="sh /home/synchronous/.scripts/termbin/tb.sh"
+
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fdfind --type f'
