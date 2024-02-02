@@ -6,7 +6,7 @@ usage() {
     echo ""
     echo "Options:"
     echo "  -h, --help       Show this help message and exit."
-    echo "  -na --no-auto    Does not automatically ."
+    echo "  -na --no-auto    Does not automatically click thru."
 }
 
 # Check if '-h' or '--help' flags are passed
