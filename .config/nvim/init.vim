@@ -28,6 +28,8 @@ call plug#begin("~/.vim/plugged")
  Plug 'nvim-tree/nvim-tree.lua'
  Plug 'ggandor/leap.nvim'
  Plug 'whonore/Coqtail'
+ Plug 'isti115/agda.nvim'
+ " Plug 'ashinkarov/nvim-agda'
 
  " markdown
  " Plug 'preservim/vim-markdown'
@@ -238,8 +240,8 @@ nnoremap <C-a>z :Goyo 80<CR>
 nnoremap <C-a>q :Goyo!<CR>
 
 " mapping control h,l to move forward and backward an entire word
-nnoremap <C-h> b
-nnoremap <C-l> w
+" nnoremap <C-h> b
+" nnoremap <C-l> w
 
 xnoremap <C-h> b
 xnoremap <C-l> w

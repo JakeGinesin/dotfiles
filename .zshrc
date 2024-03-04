@@ -29,6 +29,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export CLASSPATH=/home/synchronous/.classpath/junit-4.13.2.jar:/home/synchronous/.classpath/hamcrest-core-1.3.jar:
 
 export PATH=/home/synchronous/.local/bin:$PATH
+export PATH=/home/synchronous/.config/emacs:$PATH
 
 # Theme
 #ZSH_THEME="af-magic"
@@ -46,6 +47,7 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 
+unset ZSH_AUTOSUGGEST_USE_ASYNC
 bindkey '^ ' autosuggest-accept
 # ------------------- Aliases
 
@@ -61,11 +63,13 @@ alias nw='iwctl station wlan0 scan; iwctl station wlan0 get-networks'
 alias iwc='iwctl station wlan0 connect'
 alias iwcn='iwctl station wlan0 connect NUwave'
 alias wt='sudo systemctl restart iwd.service && polybar-restart'
+alias wtdc='iwctl station wlan0 disconnect'
 
 # easy access to config files I access frequently
 alias zshrc='nvim /home/synchronous/.zshrc' 
 alias nrc='nvim ~/.config/nvim/init.vim'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
+alias picomrc="nvim /home/synchronous/.config/picom/picom.conf"
 
 # gcalcli stuff
 # (note: gcalcli is fucking awesome, but i have a google calendar synching issue with it. 
@@ -128,7 +132,7 @@ alias cls="clear"
 # note for jake: try to change this back when you go back to boston lmfao
 alias weather="curl https://wttr.in/Boston; echo"
 alias myip="curl https://ipecho.net/plain; echo"
-alias crypto="curl https://usd.rate.sx"
+# alias crypto="curl https://usd.rate.sx"
 alias pq="ping google.com -c 5"
 
 ## Arch aliases 
@@ -208,6 +212,7 @@ alias undo-dupe="sh /home/synchronous/.scripts/bspwm/reset-duplicate.sh"
 
 # termbin
 alias termbin="sh /home/synchronous/.scripts/termbin/tb.sh"
+alias dlpaper="python /home/synchronous/.scripts/papers/dlpaper.py"
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -340,3 +345,5 @@ bindkey -s '^o' 'nnn -e ^M'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f "/home/synchronous/.ghcup/env" ] && source "/home/synchronous/.ghcup/env" # ghcup-env

@@ -163,6 +163,9 @@ super + {Left,Right}
 ctrl + super + {Left,Right}
     sh /home/synchronous/.scripts/bspwm/fast-shift.sh {left,right}
 
+super + {shift} + {d}
+    pkill -f discord
+
 
 # super + {o}
 #    obsidian
@@ -181,7 +184,10 @@ super + {ctrl} + {o}
   sh /home/synchronous/.scripts/vimwiki/search_notes.sh
 
 super + {ctrl} + {p} 
-  sh /home/synchronous/.scripts/document-scripts/paper-search.sh
+  sh /home/synchronous/.scripts/papers/paper-search.sh
+
+super + {ctrl} + {alt} + {p} 
+  sh /home/synchronous/.scripts/papers/paper-search-okular.sh
 
 super + {ctrl} + {l} 
   sh /home/synchronous/.scripts/document-scripts/document-search-fast.sh
