@@ -166,6 +166,9 @@ ctrl + super + {Left,Right}
 super + {shift} + {d}
     pkill -f discord
 
+super + {z}
+    zotero
+
 
 # super + {o}
 #    obsidian
