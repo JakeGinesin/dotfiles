@@ -3,32 +3,33 @@
 
 " plugins
 call plug#begin("~/.vim/plugged")
-
-
- " 
- Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
- Plug 'ryanoasis/vim-devicons'
- Plug 'SirVer/ultisnips'
-    let g:UltiSnipsExpandTrigger = '<tab>'
-    let g:UltiSnipsJumpForwardTrigger = '<tab>'
-    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
- Plug 'honza/vim-snippets'
- Plug 'scrooloose/nerdtree'
- Plug 'preservim/nerdcommenter'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'ryanoasis/vim-devicons'
+Plug 'SirVer/ultisnips'
+   let g:UltiSnipsExpandTrigger = '<tab>'
+   let g:UltiSnipsJumpForwardTrigger = '<tab>'
+   let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+Plug 'honza/vim-snippets'
+" Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdcommenter'
 " Plug 'mhinz/vim-startify'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
- Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
- Plug 'romgrk/barbar.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+Plug 'romgrk/barbar.nvim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
  " Plug 'github/copilot.vim'
- Plug 'junegunn/goyo.vim'
- Plug 'nvim-lua/plenary.nvim'
- Plug 'nvim-telescope/telescope.nvim'
- Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
- Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
- Plug 'nvim-tree/nvim-tree.lua'
- Plug 'ggandor/leap.nvim'
- Plug 'whonore/Coqtail'
- Plug 'isti115/agda.nvim'
+Plug 'junegunn/goyo.vim'
+Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'ggandor/leap.nvim'
+Plug 'whonore/Coqtail'
+" Plug 'isti115/agda.nvim'
+Plug 'lervag/vimtex'
+
  " Plug 'ashinkarov/nvim-agda'
 
  " markdown
@@ -44,12 +45,9 @@ call plug#begin("~/.vim/plugged")
  " Plug 'tomtom/tcomment_vim'     " For commenting motions
 " end lean shit
   
- " latex shit
- Plug 'lervag/vimtex'
- " end latex shit
  
  " CS3500 shit
- Plug 'puremourning/vimspector'
+ " Plug 'puremourning/vimspector'
  " end CS3500 shit
 call plug#end()
 
@@ -187,13 +185,6 @@ set encoding=utf-8
 imap <C-BS> <C-W>
 imap <C-H> <C-W>
 
-" Set coc complete to be shift tab 
-" set copilot complete to control shift tab
-" inoremap <expr> <S-Tab> copilot#Accept("\<CR>") 
-" let g:copilot_no_tab_map = v:true
-
-" imap <silent><script><expr> <C-[> copilot#Accept("\<CR>")
-
 augroup WrapLineInTexFile
   autocmd!
   autocmd FileType md setlocal wrap
@@ -211,12 +202,6 @@ let g:tokyonight_colors = {
 \ }
 
 colorscheme tokyonight
-
-" nerdtree stuff
-" map <C-o> :NERDTreeToggle<CR>
-" Tree
-nnoremap <C-o> :NvimTreeToggle<CR>
-let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$', '\.class$']
 
 " move between panes to left/bottom/top/right
  nnoremap <C-j> <C-w>h 
@@ -271,16 +256,6 @@ xnoremap <C-l> w
 
 " auto resize goyo
 autocmd VimResized * if exists('#goyo') | exe "normal \<c-w>=" | endif
-
-augroup custom_syntax
-    autocmd!
-    autocmd BufEnter /home/synchronous/Documents/Obsidian/Journal/abstract/*.md set syntax=markdown | syntax match LinkPattern /[a-zA-Z0-9][a-zA-Z0-9]*\.md/ | highlight LinkPattern guifg=LightBlue gui=underline
-augroup END
-
-augroup custom_syntax2
-    autocmd!
-    autocmd BufEnter /home/synchronous/Documents/Obsidian/Journal/Daily.md set syntax=markdown | syntax match LinkPattern /[a-zA-Z0-9][a-zA-Z0-9]*\.md/ | highlight LinkPattern guifg=LightBlue gui=underline
-augroup END
 
 function! CustomGf()
   let filename = expand('<cfile>')
@@ -419,13 +394,14 @@ function! YankIfMatchesRegex()
     endif
 endfunction
 
-" inoremap <silent> <tab> <Esc>:call UltiSnips#ExpandSnippetOrJump()<cr>
-"
 autocmd! BufReadPost,BufNewFile * call SetupEnvironment()
 
-" " sourcing other rcs
+" sourcing other rcs
 source ~/.config/nvim/vimtex-rc.vim
 source ~/.config/nvim/bufferline-rc.vim
 source ~/.config/nvim/vimspector-rc.vim
+source ~/.config/nvim/coc-rc.vim
+source ~/.config/nvim/nerdtree-rc.vim
+source ~/.config/nvim/airline-rc.vim
+source ~/.config/nvim/nerdcommenter-rc.vim
 lua require'vimtree'
-

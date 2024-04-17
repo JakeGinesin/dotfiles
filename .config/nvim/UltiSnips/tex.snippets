@@ -446,14 +446,20 @@ endsnippet
 
 priority 100
 context "math()"
-snippet "([a-zA-Z])__" "downer" iA
-`!p snip.rv=match.group(1)`_{$1}$2
+snippet __ "downer" iA
+_{$1}$2
 endsnippet
 
 priority 100
 context "math()"
-snippet "([a-zA-Z])^^" "upper" iA
-`!p snip.rv=match.group(1)`^^{$1}$2
+snippet "__" "downer2" iA
+_{$1}$2
+endsnippet
+
+priority 100
+context "math()"
+snippet ^^ "upper" iA
+^{$1}$2
 endsnippet
 
 

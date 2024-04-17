@@ -347,3 +347,5 @@ bindkey -s '^o' 'nnn -e ^M'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f "/home/synchronous/.ghcup/env" ] && source "/home/synchronous/.ghcup/env" # ghcup-env
+
+if [ -e /home/synchronous/.nix-profile/etc/profile.d/nix.sh ]; then . /home/synchronous/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
