@@ -1,0 +1,91 @@
+@import     "/home/synchronous/.config/rofi/styles/colors.rasi"
+
+configuration {
+    show-icons:         false;
+}
+
+* {
+    pink:               @base0C;
+    cyan:               @base0F;
+    green:              #9ece6a;
+
+    accent-color:       @base06;
+    urgent-color:       @base0A;
+
+    background-color:   transparent;
+    text-color:         @text;
+    margin:             0;
+    padding:            0;
+}
+
+window {
+    location:           center;
+    anchor:             center;
+    fullscreen:         false;
+    y-offset:           0px;
+
+    enabled:            true;
+    background-color:   @background;
+    cursor:             "default";  
+    border: 1px;
+    border-color: #565657;
+    width: 500px;
+}
+
+inputbar {
+    enabled:            true;
+    background-color:   @prompt;
+    padding:            10px;
+    children:           ["entry"];
+}
+
+entry {
+    enabled:            true;
+    padding:            0.75em 0.75em;
+    cursor:             text;
+}
+
+listview {
+    enabled:            true;
+    columns:            1;
+    lines:              10;
+    cycle:              true;
+    dynamic:            true;
+    scrollbar:          false;
+    layout:             vertical;
+    reverse:            false;
+    fixed-height:       true;
+    fixed-columns:      true;
+    margin:             0.25em 0 0.25em;
+    cursor:             "default";
+}
+
+prompt {
+    text-color:         @accent-color;
+  
+}
+
+textbox {
+    padding:            0.5em 1.5em;
+    background-color:   @prompt;
+}
+
+element {
+    enabled:            true;
+    margin:             0 0.25em;
+    padding:            0.5em 0.75em;
+    cursor:             pointer;
+    orientation:        vertical;
+}
+
+element-text {
+    highlight:          @green;
+    cursor:             inherit;
+    vertical-align:     0.5;
+    horizontal-align:   0.0;
+    font:               "Liga SFMono Nerd Font 14";
+}
+
+element-text selected {
+    text-color:           @cyan;
+}
