@@ -213,6 +213,7 @@ alias undo-dupe="sh /home/synchronous/.scripts/bspwm/reset-duplicate.sh"
 # termbin
 alias termbin="sh /home/synchronous/.scripts/termbin/tb.sh"
 alias dlpaper="python /home/synchronous/.scripts/papers/dlpaper.py"
+alias backup_home="sh /home/synchronous/.scripts/backup/backup.sh"
 
 # ------------------- fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

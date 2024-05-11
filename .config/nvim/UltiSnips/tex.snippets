@@ -427,10 +427,10 @@ snippet text "text" b
 \text{$1}$0
 endsnippet
 
-context "math()"
-snippet cvec "column vector" i
-\begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
-endsnippet
+#context "math()"
+#snippet cvec "column vector" i
+#\begin{pmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{pmatrix}
+#endsnippet
 
 priority 10
 context "math()"
@@ -463,15 +463,15 @@ snippet ^^ "upper" iA
 endsnippet
 
 
-priority 10
-snippet "hat" "hat" b
-\hat{$1}$0
-endsnippet
+#priority 100
+#snippet "hat" "hat" b
+#\hat{$1}$0
+#endsnippet
 
-priority 100
-snippet "([a-zA-Z])hat" "hat" b
-\hat{`!p snip.rv=match.group(1)`}
-endsnippet
+#priority 100
+#snippet "([a-zA-Z])hat" "hat" b
+#\hat{`!p snip.rv=match.group(1)`}
+#endsnippet
 
 snippet ita "italic" i
 \textit{$1}$0

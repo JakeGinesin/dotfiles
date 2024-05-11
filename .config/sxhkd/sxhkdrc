@@ -31,8 +31,7 @@ super + {_,shift + }w
 #super + m
 #	bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-super + y
+# send the newest marked node to the newest preselected node super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
@@ -167,7 +166,7 @@ super + {shift} + {d}
     pkill -f discord
 
 super + {z}
-    zotero
+    pkill 
 
 
 # super + {o}
@@ -194,6 +193,9 @@ super + {ctrl} + {alt} + {p}
 
 super + {ctrl} + {l} 
   sh /home/synchronous/.scripts/document-scripts/document-search-fast.sh
+
+super + {ctrl} + {k}
+  sh /home/synchronous/.scripts/vimwiki/search_people.sh
 
 # search for current semester area, then open terminal wherever it is
 super + {ctrl} + {c} 
