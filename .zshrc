@@ -30,6 +30,7 @@ export CLASSPATH=/home/synchronous/.classpath/junit-4.13.2.jar:/home/synchronous
 
 export PATH=/home/synchronous/.local/bin:$PATH
 export PATH=/home/synchronous/.config/emacs:$PATH
+export PATH=/home/synchronous/.cargo/bin/:$PATH
 
 # Theme
 #ZSH_THEME="af-magic"

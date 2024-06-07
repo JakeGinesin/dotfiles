@@ -266,7 +266,7 @@ format-foreground = ${colors.theme}
 [module/pomodoro]
 type = custom/script
 tail = true
-interval = 1.0
+interval = 2
 format = <label>
 exec = "sh /home/synchronous/.config/polybar/pomodoro.sh"
 label-foreground = ${colors.foreground}

@@ -12,8 +12,8 @@ super + @space
 	#dmenu_run -b
 
 # make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
+#super + Escape
+#	pkill -USR1 -x sxhkd
 
 #
 # bspwm hotkeys
@@ -21,7 +21,7 @@ super + Escape
 
 # quit/restart bspwm
 super + alt + {q,r}
-	bspc {quit,wm -r}
+  bspc {quit,wm -r}
 
 # close and kill
 super + {_,shift + }w
@@ -32,7 +32,7 @@ super + {_,shift + }w
 #	bspc desktop -l next
 
 # send the newest marked node to the newest preselected node super + y
-	bspc node newest.marked.local -n newest.!automatic.local
+# bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest window
 # super + g
@@ -76,8 +76,6 @@ super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
@@ -165,8 +163,12 @@ ctrl + super + {Left,Right}
 super + {shift} + {d}
     pkill -f discord
 
-super + {z}
-    pkill 
+ctrl + super + bracket{left,right}
+    sh /home/synchronous/.scripts/bspwm/fast-shift.sh {left,right}
+
+
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
 
 
 # super + {o}

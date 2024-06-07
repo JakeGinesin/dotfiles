@@ -1,5 +1,5 @@
 #!/bin/bash
-paper_dir="/home/synchronous/Zotero/storage"
+paper_dir="/home/synchronous/zotero/storage"
 papers=$(find $paper_dir -name "*.pdf" -exec basename {} \;)
 selected_file=$(echo "$papers" | rofi -dmenu -i -p "Select a paper" -theme /home/synchronous/.config/rofi/styles/prompt-papers.rasi)
 
