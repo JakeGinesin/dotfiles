@@ -8,12 +8,12 @@ super + Return
 
 # program launcher
 super + @space
-    rofi -show drun
+  rofi -show drun
 	#dmenu_run -b
 
 # make sxhkd reload its configuration files:
-#super + Escape
-#	pkill -USR1 -x sxhkd
+super + Escape
+  pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
 
 #
 # bspwm hotkeys
@@ -42,6 +42,9 @@ super + g
 
 super + shift + g
   librewolf --new-window "www.google.com"
+
+super + z
+  zotero
 
 #
 # state/flags
@@ -188,13 +191,13 @@ super + {ctrl} + {o}
   sh /home/synchronous/.scripts/vimwiki/search_notes.sh
 
 super + {ctrl} + {p} 
-  sh /home/synchronous/.scripts/papers/paper-search.sh
-
-super + {ctrl} + {alt} + {p} 
-  sh /home/synchronous/.scripts/papers/paper-search-okular.sh
+  sh /home/synchronous/.scripts/papers/paper-search-cached.sh
 
 super + {ctrl} + {l} 
-  sh /home/synchronous/.scripts/document-scripts/document-search-fast.sh
+  sh /home/synchronous/.scripts/papers/paper-search.sh
+
+#super + {ctrl} + {l} 
+#  sh /home/synchronous/.scripts/document-scripts/document-search-fast.sh
 
 super + {ctrl} + {k}
   sh /home/synchronous/.scripts/vimwiki/search_people.sh
@@ -230,3 +233,6 @@ Print
 
 super + shift + s 
     flameshot gui
+
+super + shift + {d,a}
+    bspc node @/ -C {forward,backward}

@@ -64,6 +64,7 @@ alias nw='iwctl station wlan0 scan; iwctl station wlan0 get-networks'
 alias iwc='iwctl station wlan0 connect'
 alias iwcn='iwctl station wlan0 connect NUwave'
 alias wt='sudo systemctl restart iwd.service && polybar-restart'
+alias wtr='sudo systemctl restart iwd.service && polybar-restart; sudo iw dev wlan0 set power_save off'
 alias wtdc='iwctl station wlan0 disconnect'
 
 # easy access to config files I access frequently

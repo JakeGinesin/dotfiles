@@ -21,6 +21,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 # bspc config merge_overlapping_monitors true
 bspc rule -a Zathura state=tiled
+bspc rule -a "Zotero" -o desktop="19" focus=off
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
