@@ -34,3 +34,6 @@ size = 6.0
 [font.normal]
 family = "monospace"
 style = "Regular"
+
+[shell]
+program = "/bin/zsh"

@@ -66,6 +66,7 @@ alias iwcn='iwctl station wlan0 connect NUwave'
 alias wt='sudo systemctl restart iwd.service && polybar-restart'
 alias wtr='sudo systemctl restart iwd.service && polybar-restart; sudo iw dev wlan0 set power_save off'
 alias wtdc='iwctl station wlan0 disconnect'
+alias wtrc='sh /home/synchronous/.scripts/networking/wtrc.sh'
 
 # easy access to config files I access frequently
 alias zshrc='nvim /home/synchronous/.zshrc' 
@@ -352,3 +353,19 @@ bindkey -s '^o' 'nnn -e ^M'
 [ -f "/home/synchronous/.ghcup/env" ] && source "/home/synchronous/.ghcup/env" # ghcup-env
 
 if [ -e /home/synchronous/.nix-profile/etc/profile.d/nix.sh ]; then . /home/synchronous/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+        . "/usr/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
