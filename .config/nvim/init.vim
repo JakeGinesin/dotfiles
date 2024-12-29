@@ -18,7 +18,7 @@ Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
 Plug 'romgrk/barbar.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
- " Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'nvim-lua/plenary.nvim'
 " Plug 'nvim-telescope/telescope.nvim'
@@ -231,25 +231,6 @@ nnoremap <C-a>q :Goyo!<CR>
 xnoremap <C-h> b
 xnoremap <C-l> w
 
-" let g:copilot_filetypes={
-"      \ '*': v:false,
-"      \ 'python': v:true,
-"      \ 'rust': v:true,
-"      \ 'cpp': v:true,
-"      \ 'c': v:true,
-"      \ 'java': v:true,
-"      \ 'javascript': v:true,
-"      \ 'typescript': v:true,
-"      \ 'go': v:true,
-"      \ 'pml': v:true
-"      \ }
-
-" Telescope
-" nnoremap <C-h>f :Telescope find_files<CR>
-" nnoremap <C-h>d :Telescope live_grep<CR>
-" nnoremap <C-h>u :Telescope lsp_definitions<CR>
-" nnoremap <C-h>e :Telescope<CR>git_
-" nnoremap <C-h>h :Telescope<CR>
 
 
 " vim wiki shit
@@ -405,4 +386,5 @@ source ~/.config/nvim/coc-rc.vim
 source ~/.config/nvim/nerdtree-rc.vim
 source ~/.config/nvim/airline-rc.vim
 source ~/.config/nvim/nerdcommenter-rc.vim
+source ~/.config/nvim/copilot.vim
 lua require'vimtree'
