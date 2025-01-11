@@ -103,6 +103,7 @@ Stay and Meredith - 2015 - Higher category models of the pi-calculus.pdf
 Protzenko et al. - 2017 - Verified Low-Level Programming Embedded in F.pdf
 Grobler et al. - 2023 - Parikh Automata on Infinite Words.pdf
 Stathopoulos et al. - A SCHUR COMPLEMENT METHOD FOR EIGENVALUE PROBLEMS.pdf
+Gross - Performance Engineering of Proof-Based Software Systems at Scale.pdf
 Nonblocking Commit Protocols.pdf
 Saad - Iterative Methods for Sparse Linear Systems.pdf
 Fluet et al. - 2006 - Linear Regions Are All You Need.pdf
@@ -138,6 +139,7 @@ Chen and Fischlin - 2024 - Integrating Causality in Messaging Channels.pdf
 Chase et al. - 2020 - The Signal Private Group System and Anonymous Credentials Supporting Efficient Verifiable Encryption.pdf
 Ahmed et al. - L3 A Linear Language with Locations (Technical Report).pdf
 Henzinger et al. - 2023 - Private Web Search with Tiptoe.pdf
+Nagasamudram et al. - 2024 - Verifying a C Implementation of Derecho’s Coordination Mechanism Using VST and Coq.pdf
 Avigad - 2024 - Mathematics and the formal turn.pdf
 Feng and Crane - 2024 - A Heat Method for Generalized Signed Distance.pdf
 Cremers et al. - 2017 - A Comprehensive Symbolic Analysis of TLS 1.3.pdf
@@ -279,6 +281,7 @@ Muthuraj et al. - 2024 - Replication Taking a long look at QUIC.pdf
 Griffioen et al. - 2024 - Have you SYN me Characterizing Ten Years of Internet Scanning.pdf
 Ongaro and Ousterhout - In Search of an Understandable Consensus Algorithm.pdf
 Alwen et al. - 2019 - The Double Ratchet Security Notions, Proofs, and Modularization for the Signal Protocol.pdf
+Milano et al. - 2022 - A flexible type system for fearless concurrency.pdf
 Dellaert and Kaess - 2017 - Factor Graphs for Robot Perception.pdf
 Blanchet and Smyth - Automated reasoning for equivalences in the applied pi calculus with barriers.pdf
 Gu and Dao - 2024 - Mamba Linear-Time Sequence Modeling with Selective State Spaces.pdf
