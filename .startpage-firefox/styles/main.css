@@ -1,0 +1,251 @@
+:root {
+  /* light theme */
+  /* --header: rgb(255, 91, 154); */
+  /* --titles: rgb(255, 91, 154); */
+  /* --text: rgb(120, 89, 121); */
+  /* --background: rgb(255,210,245); */
+  /* --foreground: rgb(255,225,250); */
+  /* --search: rgba(255, 255, 255, 0); */
+
+  /* dark theme original */
+  /* --header: rgb(235, 108, 187); */
+  /* --titles: rgb(249, 191, 231); */
+  /* --text: rgb(251, 228, 251); */
+  /* --background: rgb(8, 7, 9); */
+  /* --foreground: rgb(14, 10, 15); */
+  /* --search: rgba(255, 255, 255, 0); */
+
+  /* dark theme modified */
+  --header: #80a0ff;
+  --titles: rgb(249, 191, 231);
+  --text: rgb(251, 228, 251); 
+  --background: #0d0d0d;
+  /* --foreground: rgb(14, 10, 15); */
+  --foreground: #242424;
+  --search: rgba(255, 255, 255, 0);
+
+
+}
+
+@font-face {
+	font-family: "OstrichSans";
+	src: url("fonts/ostrich-regular.ttf");
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("fonts/Montserrat-ExtraLight.otf");
+}
+
+h1 {
+  font-weight: bold;
+  font-style: italic;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+h2 {
+  color: var(--header);
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  transition: all 0.25s ease-out;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: var(--background);
+  color: var(--titles);
+  /* font-family: "Space Mono", monospace; */
+	font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  transition: 0.25s ease-out;
+  will-change: background-color, color;
+}
+
+.iden {
+  color: var(--header);
+}
+
+.container img {
+  width: 25vw;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.search {
+  max-width:500px;
+}
+
+footer {
+  margin: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.52rem;
+}
+footer a {
+  color: var(--titles);
+  cursor: pointer;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+nav a {
+  color: var(--text);
+}
+nav a:hover {
+  color: var(--header);
+}
+
+ul {
+  list-style-type: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80vw;
+  height: 350px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  background-color: var(--foreground);
+  transition: 0.25s ease-out;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px #1a1a1a;
+}
+
+.rightNav {
+  width: 100%;
+  padding: 0 5ch;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+form {
+  margin: 1em 0;
+  position: relative;
+}
+form input {
+  width: 100%;
+  margin-left: 2ch;
+  background-color: var(--search);
+  color: var(--titles);
+  font: inherit;
+  border: none;
+  transition: all 0.2s;
+}
+form label {
+  color: var(--titles);
+  position: absolute;
+  margin-top:1.45px;
+  transition: all 0.4s;
+}
+form:focus-within input::-moz-placeholder {
+  opacity: 0;
+}
+form:focus-within input::placeholder {
+  opacity: 0;
+}
+
+/* #mainImg { */
+  /* max-width: 300px; */
+  /* height: auto; */
+  /* display: block; */
+  /* margin: 0 auto; */
+  /* object-fit: contain; */
+/* } */
+
+/*
+  Transitions
+*/
+#fader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  pointer-events: none;
+  background: var(--background);
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+}
+#fader.fade-out {
+  opacity: 0;
+  animation-name: fade-out;
+}
+#fader.fade-in {
+  opacity: 1;
+  animation-name: fade-in;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 1080px) {
+  .container {
+    width: 90vw;
+  }
+  .container img {
+    width: 20vw;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media (max-width: 800px) {
+  .container {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .container nav {
+    flex-flow: row wrap;
+    gap: 1ch;
+  }
+  .container .rightNav {
+    padding: 5ch 5ch;
+  }
+}
+@media (max-width: 650px) {
+  #main_window {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  form input[type=search] {
+    width: 90%;
+  }
+}/*# sourceMappingURL=main.css.map */

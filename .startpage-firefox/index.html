@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>~</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <script src="scripts/main.js"></script>
+    <script src="scripts/transitions.js"></script>
+  </head>
+
+  <body>
+    <svg id="fader"></svg>
+    <script>fade();</script>
+
+    <main>
+      <div class="container">
+        <img src="assets/img/arkestar.png" alt="Main decorative image" id="mainImg">
+
+        <div class="rightNav">
+          <h1>Welcome, <span class="iden">Jake</span> </h1>
+          <div id="date"></div>
+          
+          <div class="search">
+            <form action="https://tanomu.momiko.moe" method="get" autocomplete="off">
+              <label for="q">></label>
+              <input autofocus id="q" name="q" placeholder="search.." type="search">
+            </form>
+          </div>
+
+          <nav>
+            <div class="category">
+              <h2>Frequent</h2>
+              <ul>
+                <li><a href="https://gmail.com">Gmail</a></li>
+                <li><a href="https://calendar.google.com">Calendar</a></li>
+                <li><a href="https://jakegines.in">jakegines.in</a></li>
+              </ul>
+            </div>
+
+            <div class="category">
+              <h2>Uni</h2>
+              <ul>
+                <li><a href="https://www.husker.nu/">Husker</a></li>
+                <li><a href="https://https://northeastern.instructure.com/">Canvas</a></li>
+                <li><a href="https://student.me.northeastern.edu/">Hub</a></li>
+              </ul>
+            </div>
+
+            <div class="category">
+              <h2>Code</h2>
+              <ul>
+                <li><a href="https://github.com">Github</a></li>
+                <li><a href="https://github.com">lobste.rs</a></li>
+                <li><a href="https://news.ycombinator.com/">Hackernews</a></li>
+                <li><a href="https://codeforces.com/problemset">Codeforces</a></li>
+              </ul>
+            </div>
+
+            <div class="category">
+              <h2>Moosic</h2>
+              <ul>
+                <li><a href="https://bandcamp.com/">Bandcamp</a></li>
+                <li><a href="https://soundcloud.com/">Soundcloud</a></li>
+                <li><a href="https://listen.moe">Listen.moe</a></li>
+                <li><a href="https://poolsuite.net/">Poolsuite</a></li>
+              </ul>
+            </div>
+
+            <div class="category">
+              <h2>Research</h2>
+              <ul>
+                <li><a href="https://eprint.iacr.org/">Cryptology ePrint</a></li>
+                <li><a href="https://arxiv.org/list/cs.CR/recent">cs.CR</a></li>
+                <li><a href="https://arxiv.org/list/cs.PL/recent">cs.PL</a></li>
+                <li><a href="https://arxiv.org/list/cs.LO/recent">cs.LO</a></li>
+                <li><a href="https://arxiv.org/list/cs.FL/recent">cs.FL</a></li>
+              </ul>
+            </div>
+
+          </nav>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span class="left">
+        <!-- <a id="dark-mode-toggle">Switch themes</a> |  -->
+        Cycle
+        <a id="image-cycle">Forwards</a> | 
+        <a id="image-cycle-bw">Backwards</a>
+      </span>
+      
+      <span class="right">
+        <!-- <a href="https://gitlab.com/wolfiy/wlfys-minimal-startpage">Source code</a> |  -->
+        <!-- <a href="https://twitter.com/Arkestar">Artworks by Arkestar</a> -->
+      </span>
+    </footer>
+
+    <script src="scripts/visuals.js"></script>
+  </body>
+</html>

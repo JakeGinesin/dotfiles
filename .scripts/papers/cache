@@ -1,3 +1,5 @@
+NWCFINAL.pdf
+dynamics_1_introduction_to_real_dynamics_v3.00.pdf
 Rothblum et al. - PINE Efficient Verification of a Euclidean Norm Bound of a Secret-Shared Vector.pdf
 Ahmed et al. - A Step-Indexed Model of Substructural State.pdf
 Tan et al. - A New Veriﬁed Compiler Backend for CakeML.pdf
@@ -10,6 +12,7 @@ Collins and Riepel - On the Tight Security of the Double Ratchet.pdf
 Youn et al. - 2024 - Bringing the WebAssembly Standard up to Speed with SpecTec.pdf
 Balbás et al. - 2023 - WhatsUpp with Sender Keys Analysis, Improvements and Security Proofs.pdf
 DeepSec-manual.pdf
+Bhargavan et al. - 2021 - A Tutorial-Style Introduction to $$textsf {DY}^star $$.pdf
 Lago et al. - 2017 - The geometry of concurrent interaction Handling multiple ports by way of multiple tokens.pdf
 Basin et al. - 2022 - Tamarin Verification of Large-Scale, Real-World, Cryptographic Protocols.pdf
 Krauthgamer et al. - 2009 - Partitioning Graphs into Balanced Components.pdf
@@ -28,6 +31,7 @@ Dolstra et al. - 2010 - NixOS A Purely Functional Linux Distribution.pdf
 Sterling and Harper - Logical Relations as Types.pdf
 Ammann et al. - DY Fuzzing Formal Dolev-Yao Models Meet Cryptographic Protocol Fuzz Testing.pdf
 Dunfield and Krishnaswami - 2022 - Bidirectional Typing.pdf
+Park et al. - 2024 - Approximate Equivariance in Reinforcement Learning.pdf
 Jhala and Vazou - 2020 - Refinement Types A Tutorial.pdf
 Liu et al. - 2024 - Minotaur A SIMD-Oriented Synthesizing Superoptimizer.pdf
 Li et al. - 2003 - pARMS a parallel version of the algebraic recursive multilevel solver.pdf
@@ -48,6 +52,7 @@ Jattke et al. - ZenHammer Rowhammer Attacks on AMD Zen-based Platforms.pdf
 Kozyrev et al. - 2024 - CoqPilot, a plugin for LLM-based generation of proofs.pdf
 Basin et al. - A Formal Analysis of the iMessage PQ3 Messaging Protocol.pdf
 Gäher and Kunze - 2021 - Mechanising Complexity Theory The Cook-Levin Theorem in Coq.pdf
+McCleary et al. - 2023 - Lensing in the Blue. II. Estimating the Sensitivity of Stratospheric Balloons to Weak Gravitational.pdf
 Khan et al. - 2005 - Generic Verification of Security Protocols.pdf
 Kalantzis et al. - Spectral Schur complement techniques for symmetric eigenvalue problems.pdf
 Mueller - Modeling temporally-regulated effects on distributions.pdf
@@ -113,6 +118,7 @@ Lu et al. - 2023 - Diagonal of Pseudoinverse of Graph Laplacian Fast Estimation 
 Gancher et al. - 2023 - Owl Compositional Verification of Security Protocols via an Information-Flow Type System.pdf
 Ozga et al. - 2023 - Towards a Formally Verified Security Monitor for VM-based Confidential Computing.pdf
 Abstract Algebra Third Edition -- David S_ Dummit, Richard M_ Foote -- 3, 2004 -- Wiley; John Wiley & Sons, Inc_ -- 0471433349 -- 04c9a91190312bda1928685064338589 -- Anna’s Archive.pdf
+Yin et al. - 2019 - HotStuff BFT Consensus in the Lens of Blockchain.pdf
 Gregorie et al. - 1997 - The SPIN Verification System.pdf
 Blanchet - 2012 - Security Protocol Verification Symbolic and Computational Models.pdf
 Bressoud et al. - Hypervisor-based Fault-tolerance.pdf
@@ -137,10 +143,12 @@ Chen et al. - 2017 - Efficient and Available In-Memory KV-Store with Hybrid Eras
 McMillan - 2016 - Modular specification and verification of a cache-coherent interface.pdf
 Chen and Fischlin - 2024 - Integrating Causality in Messaging Channels.pdf
 Chase et al. - 2020 - The Signal Private Group System and Anonymous Credentials Supporting Efficient Verifiable Encryption.pdf
+Kret and Schmidt - The PQXDH Key Agreement Protocol.pdf
 Ahmed et al. - L3 A Linear Language with Locations (Technical Report).pdf
 Henzinger et al. - 2023 - Private Web Search with Tiptoe.pdf
 Nagasamudram et al. - 2024 - Verifying a C Implementation of Derecho’s Coordination Mechanism Using VST and Coq.pdf
 Avigad - 2024 - Mathematics and the formal turn.pdf
+Amir et al. - 2011 - Prime Byzantine Replication under Attack.pdf
 Feng and Crane - 2024 - A Heat Method for Generalized Signed Distance.pdf
 Cremers et al. - 2017 - A Comprehensive Symbolic Analysis of TLS 1.3.pdf
 Abadi et al. - TensorFlow A System for Large-Scale Machine Learning.pdf
@@ -150,6 +158,7 @@ Schmidt et al. - 2014 - Automated Verification of Group Key Agreement Protocols.
 Swamy et al. - Proof-Oriented Programming in F.pdf
 Beschastnikh et al. - 2015 - Using Declarative Specification to Improve the Understanding, Extensibility, and Comparison of Model.pdf
 Kanabar et al. - 2023 - PureCake A Verified Compiler for a Lazy Functional Language.pdf
+Avelãs et al. - 2024 - Probabilistic Byzantine Fault Tolerance (Extended Version).pdf
 paper.pdf
 Bonchi and Pous - 2015 - Hacking nondeterminism with induction and coinduction.pdf
 Liu et al. - 2023 - Omnigrok Grokking Beyond Algorithmic Data.pdf
@@ -193,6 +202,7 @@ Chen et al. - 2022 - Property-Based Testing Climbing the Stairway to Verificatio
 mattern89virtual.pdf
 Basin et al. - 2021 - The EMV Standard Break, Fix, Verify.pdf
 Barbosa et al. - 2021 - SoK Computer-Aided Cryptography.pdf
+Nix and Weigend - 1994 - Estimating the mean and variance of the target probability distribution.pdf
 Zhou et al. - VeriSMo A Verified Security Module for Confidential VMs.pdf
 Asperti - 2017 - About the efficient reduction of lambda terms.pdf
 Meadows - Formal Methods for Cryptographic Protocol Analysis Emerging Issues and Trends.pdf
@@ -268,11 +278,13 @@ Bank and Wagner - 1999 - Multilevel ILU decomposition.pdf
 Berman and Ginesin - The State of Julia for Scientiﬁc Machine Learning.pdf
 Schuler et al. - 2009 - Efficient mutation testing by checking invariant violations.pdf
 von Hippel et al. - 2022 - Automated Attacker Synthesis for Distributed Protocols.pdf
+Bessani et al. - 2014 - State Machine Replication for the Masses with BFT-SMART.pdf
 Ara et al. - 2023 - Polygraphs From Rewriting to Higher Categories.pdf
 proof-of-replication.pdf
 Clarke and Wang - 25 Years of Model Checking .pdf
 Lampropoulos et al. - 2019 - Coverage guided, property based testing.pdf
 Amin et al. - 2023 - LURK Lambda, the Ultimate Recursive Knowledge (Experience Report).pdf
+Amini et al. - 2020 - Deep Evidential Regression.pdf
 Barthe et al. - 2020 - A Probabilistic Separation Logic.pdf
 Lau et al. - 2024 - Specification and Verification of Strong Timing Isolation of Hardware Enclaves.pdf
 Cade et al. - From Computationally-Proved Protocol Speciﬁcations to Implementations and Application to SSH.pdf
@@ -294,10 +306,12 @@ Blanchet and Jacomme - CryptoVerif a Computationally-Sound Security Protocol Ver
 Knyazev - 2001 - Toward the Optimal Preconditioned Eigensolver Locally Optimal Block Preconditioned Conjugate Gradie.pdf
 Saltzer et al. - 1984 - End-to-end arguments in system design.pdf
 eig_book_2ndEd.pdf
+tilings.pdf
 Woos et al. - 2016 - Planning for change in a formal verification of the raft consensus protocol.pdf
 Lamman et al. - 2024 - The IA Guide A Breakdown of Intrinsic Alignment Formalisms.pdf
 Dakhel et al. - 2023 - Effective Test Generation Using Pre-trained Large Language Models and Mutation Testing.pdf
 Pornin - 2024 - A Prime-Order Group with Complete Formulas from Even-Order Elliptic Curves.pdf
+Cai and Devroye - 2015 - The Analysis of Kademlia for random IDs.pdf
 Pin - Mathematical Foundations of Automata Theory.pdf
 turing.pdf
 Weintraub et al. - 2024 - Payout Races and Congested Channels A Formal Analysis of Security in the Lightning Network.pdf
@@ -325,6 +339,8 @@ Kang et al. - 2015 - A formal C memory model supporting integer-pointer casts.pd
 Gallier - The Schur Complement and Symmetric Positive Semideﬁnite (and Deﬁnite) Matrices.pdf
 Gennaro et al. - 2013 - Quadratic Span Programs and Succinct NIZKs without PCPs.pdf
 Guerrini - 1999 - A general theory of sharing graphs.pdf
+Rahli et al. - 2018 - Velisarios Byzantine Fault-Tolerant Protocols Powered by Coq.pdf
+Awerbuch et al. - 2002 - An on-demand secure routing protocol resilient to byzantine failures.pdf
 Wang et al. - 2021 - Data-Driven Synthesis of Provably Sound Side Channel Analyses.pdf
 Stadler et al. - 2024 - Fast, Accurate and Perturbative Forward Modeling of Galaxy Clustering Part II Redshift Space.pdf
 Rogaway - The Moral Character of Cryptographic Work.pdf
@@ -335,14 +351,17 @@ Yang et al. - 2023 - InterCode Standardizing and Benchmarking Interactive Coding
 Cremers et al. - 2023 - Subterm-Based Proof Techniques for Improving the Automation and Scope of Security Protocol Analysis.pdf
 Athalye et al. - Modular Veriﬁcation of Non-Leakage for Hardware Security Modules with Parfait.pdf
 Bhargavan et al. - 2013 - Implementing TLS with Verified Cryptographic Security.pdf
+Michaelson et al. - 2023 - Unsatisfiability Proofs for Distributed Clause-Sharing SAT Solvers.pdf
 Cogumbreiro et al. - 2023 - Memory access protocols certified data-race freedom for GPU kernels.pdf
 Casacuberta et al. - 2022 - SoK Oblivious Pseudorandom Functions.pdf
 Jia - Higher Order Mutation Testing.pdf
+Cyphert and Kincaid - 2023 - Solvable Polynomial Ideals The Ideal Reflection for Program Analysis.pdf
 Newcombe et al. - 2015 - How Amazon web services uses formal methods.pdf
 Doherty et al. - 2022 - Spectral Measurement Sparsification for Pose-Graph SLAM.pdf
 Amin and Rompf - 2018 - Collapsing towers of interpreters.pdf
 Rosen - 2022 - Accelerating Certifiable Estimation with Preconditioned Eigensolvers.pdf
 Zhao et al. - 2024 - Compositional Verification of Composite Byzantine Protocols.pdf
+Rocket et al. - 2020 - Scalable and Probabilistic Leaderless BFT Consensus through Metastability.pdf
 Lipp et al. - 2019 - A Mechanised Cryptographic Proof of the WireGuard Virtual Private Network Protocol.pdf
 Marshall and Orchard - How to Take the Inverse of a Type.pdf
 Helias and Dahmen - 2020 - Statistical field theory for neural networks.pdf
@@ -363,12 +382,15 @@ Vafeiadis - 2011 - Concurrent Separation Logic and Operational Semantics.pdf
 Bernstein and Chou - CryptAttackTester high-assurance attack analysis.pdf
 Brookes and O’Hearn - 2016 - Concurrent Separation Logic.pdf
 Kobeissi - Formal verification for real-world cryptographic protocols and implementations.pdf
+McAreavey et al. - The Event Calculus in Probabilistic Logic Programming with Annotated Disjunctions.pdf
 Harrison - 2006 - Towards Self-verification of HOL Light.pdf
 Lehman et al. - 2022 - Evolution through Large Models.pdf
 Bronstein et al. - 2021 - Geometric Deep Learning Grids, Groups, Graphs, Geodesics, and Gauges.pdf
 Leino - 2010 - Dafny An Automatic Program Verifier for Functional Correctness.pdf
+DFS Delegation-friendly zkSNARK and Private Delegation of Provers.pdf
 Anderson et al. - 2014 - NetKAT semantic foundations for networks.pdf
 Firsov and Unruh - 2023 - Zero-Knowledge in EasyCrypt.pdf
+Rice - 2007 - Mathematical statistics and data analysis.pdf
 Hofgard et al. - 2024 - Relaxed Equivariant Graph Neural Networks.pdf
 Ginesin and Nita-Rotaru - The Matrix Reloaded A Mechanized Formal Analysis of the Matrix Cryptographic Suite.pdf
 Petrović and Ivanković - 2018 - State of mutation testing at google.pdf
@@ -383,6 +405,7 @@ Mus et al. - 2023 - Jolt Recovering TLS Signing Keys via Rowhammer Faults.pdf
 Saad and Zhang - 1999 - BILUM Block Versions of Multielimination and Multilevel ILU Preconditioner for General Sparse Linea.pdf
 Sammler et al. - 2023 - DimSum A Decentralized Approach to Multi-language Semantics and Verification.pdf
 Padon et al. - Ivy Safety Veriﬁcation by Interactive Generalization.pdf
+Paar and Pelzl - 2010 - Understanding Cryptography A Textbook for Students and Practitioners.pdf
 Ruhe et al. - Clifford Group Equivariant Neural Networks.pdf
 Linus et al. - BitVM2 Bridging Bitcoin to Second Layers.pdf
 Blanc and Lam - 2024 - Surveying the Rust Verification Landscape.pdf
@@ -401,6 +424,7 @@ Thesis.pdf
 Song et al. - 2023 - Training Multi-Layer Over-Parametrized Neural Network in Subquadratic Time.pdf
 Durumeric et al. - 2024 - Ten Years of ZMap.pdf
 Nevatia et al. - 2024 - Reachability Analysis of the Domain Name System.pdf
+Bach et al. - 2022 - A Comprehensive Study of k-Portfolios of Recent SAT Solvers.pdf
 Liu et al. - 2023 - OMNIGROK GROKKING BEYOND ALGORITHMIC.pdf
 van Dijk - The Parallelization of Binary Decision Diagram operations for model checking.pdf
 Bond and Hawblitzel - Vale Verifying High-Performance Cryptographic Assembly Code.pdf
@@ -431,14 +455,17 @@ Schmidt et al. - 2014 - Automated Verification of Group Key Agreement Protocols.
 Benton et al. - 2013 - Proof-Relevant Logical Relations for Name Generation.pdf
 Meent et al. - 2021 - An Introduction to Probabilistic Programming.pdf
 Guha et al. - 2022 - Parikh Automata over Infinite Words.pdf
+RP3-FinalVersion.pdf
 Corbett et al. - Spanner Google’s Globally-Distributed Database.pdf
 Kovács - Closure-Free Functional Programming in a Two-Level Type Theory.pdf
 Blanchet et al. - ProVerif 2.05 Automatic Cryptographic Protocol Verifier, User Manual and Tutorial.pdf
 Amir et al. - On the performance of group key agreement protocols.pdf
+idealhashtrees.pdf
 Bornholt et al. - 2021 - Using Lightweight Formal Methods to Validate a Key-Value Storage Node in Amazon S3.pdf
 King and Young - 1994 - Study Abroad Education for the 21st Century.pdf
 To - 2010 - Parikh Images of Regular Languages Complexity and Applications.pdf
 Sergey et al. - 2018 - Programming and proving with distributed protocols.pdf
+Paquereau et al. - 2025 - Tracing the galaxy-halo connection with galaxy clustering in COSMOS-Web from z = 0.1 to z ~ 12.pdf
 Shirahata - Geometry of Interaction explained.pdf
 Holzmann and Smith - 2000 - Automating software feature verification.pdf
 evalapplyjfp06.pdf
@@ -460,6 +487,7 @@ Bousseyroux and Bouchaud - 2024 - An Interacting Particle System Interpretation 
 Bhargavan et al. - 2014 - Proving the TLS Handshake Secure (As It Is).pdf
 Liu et al. - 2024 - KAN Kolmogorov-Arnold Networks.pdf
 Zhou et al. - 2024 - Language Agent Tree Search Unifies Reasoning Acting and Planning in Language Models.pdf
+Amir et al. - 2011 - Prime Byzantine Replication under Attack.pdf
 Correnson and Steinhoefel - 2023 - Engineering a Formally Verified Automated Bug Finder.pdf
 Gross et al. - 2024 - Towards a Scalable Proof Engine A Performant Prototype Rewriting Primitive for Coq.pdf
 Weidner et al. - 2021 - Key Agreement for Decentralized Secure Group Messaging with Strong Security Guarantees.pdf
@@ -499,6 +527,7 @@ Cassano et al. - 2022 - MultiPL-E A Scalable and Extensible Approach to Benchmar
 Giridharan et al. - 2024 - Autobahn Seamless high speed BFT.pdf
 Liu et al. - Certifying Zero-Knowledge Circuits with Refinement Types.pdf
 Kobeissi and Bhargavan - Noise Explorer Fully Automated Modeling and Veriﬁcation for Arbitrary Noise Protocols.pdf
+Maksimović et al. - 2023 - Exact Separation Logic Towards Bridging the Gap Between Verification and Bug-Finding.pdf
 Kobeissi et al. - Verifpal Cryptographic Protocol Analysis for the Real World.pdf
 Liu et al. - 2023 - Is Your Code Generated by ChatGPT Really Correct Rigorous Evaluation of Large Language Models for C.pdf
 Backes et al. - 2017 - A Novel Approach for Reasoning about Liveness in Cryptographic Protocols and Its Application to Fair.pdf
@@ -508,6 +537,7 @@ Lamport - 2011 - Byzantizing Paxos by Refinement.pdf
 Shao - DUCKEE GO Dynamic and User-friendly ConcoliK Execution Engine in GO.pdf
 Messenger End-to-End Encryption Overview.pdf
 Johnson-Freyd et al. - 2020 - Topos Semantics for a Higher-Order Temporal Logic of Actions.pdf
+Awerbuch et al. - 2002 - An on-demand secure routing protocol resilient to byzantine failures.pdf
 Fiedler et al. - 2023 - Putting out the hardware dumpster fire.pdf
 Oosterbeek - Assessing the returns to studying abroad.pdf
 Gulwani - Automating String Processing in Spreadsheets Using Input-Output Examples.pdf

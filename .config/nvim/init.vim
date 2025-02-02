@@ -22,11 +22,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/goyo.vim'
 Plug 'nvim-lua/plenary.nvim'
 " Plug 'nvim-telescope/telescope.nvim'
-"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'ggandor/leap.nvim'
 Plug 'whonore/Coqtail'
+Plug 'nvim-treesitter/nvim-treesitter'
 " Plug 'isti115/agda.nvim'
 Plug 'lervag/vimtex'
 
@@ -37,7 +38,7 @@ Plug 'lervag/vimtex'
 
  " lean shit
  " Plug 'Julian/lean.nvim'
- " Plug 'neovim/nvim-lspconfig'
+ Plug 'neovim/nvim-lspconfig'
  " Plug 'nvim-lua/plenary.nvim'
  " Plug 'hrsh7th/nvim-cmp'        " For LSP completion
  " Plug 'hrsh7th/vim-vsnip'       " For snippets
@@ -331,9 +332,10 @@ let g:tex_conceal = ""
 
 
 let g:UltiSnipsSnippetDirectories=[$HOME . "/.config/nvim/UltiSnips"]
+autocmd FileType markdown CocDisable
 
 function! SetupEnvironment()
-  if (&ft == 'markdown' || &ft == 'txt' || &ft == 'tex')
+  if (&ft == 'markdown' || &ft == 'txt' || &ft == 'tex' || &ft == 'bend')
     setlocal wrap 
     let b:coc_suggest_disable=1
     setlocal spell
@@ -380,7 +382,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 " sourcing other rcs
 source ~/.config/nvim/vimtex-rc.vim
-source ~/.config/nvim/bufferline-rc.vim
+" source ~/.config/nvim/bufferline-rc.vim
 source ~/.config/nvim/vimspector-rc.vim
 source ~/.config/nvim/coc-rc.vim
 source ~/.config/nvim/nerdtree-rc.vim
@@ -388,3 +390,73 @@ source ~/.config/nvim/airline-rc.vim
 source ~/.config/nvim/nerdcommenter-rc.vim
 source ~/.config/nvim/copilot.vim
 lua require'vimtree'
+let g:barbar_auto_setup = v:false " disable auto-setup
+lua << EOF
+  require'barbar'.setup {
+
+  }
+EOF
+source ~/.config/nvim/barbar.vim
+
+" lua << EOF 
+" require'nvim-treesitter.configs'.setup {
+  " -- A list of parser names, or "all" (the listed parsers MUST always be installed)
+  " ensure_installed = { "markdown_inline", "bend" },
+
+  " -- Install parsers synchronously (only applied to `ensure_installed`)
+  " sync_install = false,
+
+  " -- Automatically install missing parsers when entering buffer
+  " -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+  " auto_install = true,
+
+  " -- List of parsers to ignore installing (or "all")
+  " ignore_install = { "javascript" },
+
+  " ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
+  " -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+
+  " highlight = {
+    " enable = true,
+
+    " disable = { "c", "rust", "tex", "markdown"},
+    " -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
+    " disable = function(lang, buf)
+        " local max_filesize = 100 * 1024 -- 100 KB
+        " local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        " if ok and stats and stats.size > max_filesize then
+            " return true
+        " end
+    " end,
+
+    " -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    " -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    " -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    " -- Instead of true it can also be a list of languages
+    " additional_vim_regex_highlighting = false,
+  " },
+" }
+
+
+" local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+" parser_config.bend = {
+  " install_info = {
+    " url = "https://github.com/HigherOrderCO/tree-sitter-bend",
+    " files = { "src/parser.c", "src/scanner.c" },
+    " branch = "main",
+  " },
+" }
+
+" vim.filetype.add({
+  " extension = {
+    " bend = "bend",
+  " },
+" })
+
+" vim.treesitter.language.register("bend", { "bend" })
+
+" EOF
+
+" lua require'nvim-lspconfig'
+" lua dofile("~/.config/nvim/lua/barbar.lua")
+" luafile ~/.config/nvim/lua/barbar.lua
