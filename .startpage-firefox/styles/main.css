@@ -80,7 +80,8 @@ body {
 }
 
 .container img {
-  width: 25vw;
+  width: 20vw;
+  max-width:250px;
   -o-object-fit: cover;
   object-fit: cover;
 }
