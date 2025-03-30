@@ -332,7 +332,7 @@ let g:tex_conceal = ""
 
 
 let g:UltiSnipsSnippetDirectories=[$HOME . "/.config/nvim/UltiSnips"]
-autocmd FileType markdown CocDisable
+" autocmd FileType markdown CocDisable
 
 function! SetupEnvironment()
   if (&ft == 'markdown' || &ft == 'txt' || &ft == 'tex' || &ft == 'bend')
@@ -438,6 +438,10 @@ source ~/.config/nvim/barbar.vim
 " }
 
 
+
+" EOF
+
+
 " local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 " parser_config.bend = {
   " install_info = {
@@ -454,8 +458,6 @@ source ~/.config/nvim/barbar.vim
 " })
 
 " vim.treesitter.language.register("bend", { "bend" })
-
-" EOF
 
 " lua require'nvim-lspconfig'
 " lua dofile("~/.config/nvim/lua/barbar.lua")

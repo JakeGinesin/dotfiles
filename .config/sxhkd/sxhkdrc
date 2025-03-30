@@ -12,8 +12,8 @@ super + @space
 	#dmenu_run -b
 
 # make sxhkd reload its configuration files:
-super + Escape
-  pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
+# super + Escape
+#   pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
 
 #
 # bspwm hotkeys
