@@ -19,7 +19,7 @@ line-size = 3
 ;locale = tr_TR.UTF-8
 
 width = 99.7%
-height = 20
+height = 25
 offset-x = 4
 offset-y = 3
 padding-left = 2 
@@ -32,8 +32,8 @@ tray-detached = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 = B612:style=Regular:size=9;3
-font-1 = JetBrainsMono Nerd Font:style=Regular:size=9;3
+font-0 = B612:style=Regular:size=11.5;3
+font-1 = JetBrainsMono Nerd Font:style=Regular:size=11.5;3
 font-2 = "Noto Sans Symbols:size=13;1"
 
 modules-left = date battery cpu memory coretemp pulseaudio-control network bluetooth cmus 

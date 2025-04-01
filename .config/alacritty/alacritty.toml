@@ -35,5 +35,7 @@ size = 6.0
 family = "monospace"
 style = "Regular"
 
-[shell]
+[terminal]
+
+[terminal.shell]
 program = "/bin/zsh"

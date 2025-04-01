@@ -8,8 +8,10 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-xrandr --output eDP-1 --mode 1920x1080 --primary
+# xrandr --output eDP-1 --mode 1920x1080 --primary
 # xrandr --output HDMI-1 --mode 1920x1080 --same-as eDP-1 --scale 1x1
+xrandr --output eDP-1 --scale 1x1 --auto 
+# xrandr --output eDP-1 --scale 0.75x0.75
 
 bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
 
